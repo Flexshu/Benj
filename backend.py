@@ -9,6 +9,7 @@ limiter: fl.Limiter = fl.Limiter(
     key_func = lambda: f.request.remote_addr
 )
 
+@flask.route("/")
 @flask.route("/home")
 def home():
     return f.render_template("home.html")
