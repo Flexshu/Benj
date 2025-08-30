@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "KyivType";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Regular2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBold";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Medium2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBolder";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Heavy2.woff2) format("woff2");
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: max(calc(100vh - 65px), 500px);
+  width: 100%;
+  position: relative;
+}
+body main .container .first {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+body main .container .first img {
+  height: 100%;
+}
+body main .container .second {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+body main .container .second .marginedSecond {
+  width: calc((100vw - max(calc(100vh - 65px), 500px)) * 0.9);
+  height: max(calc(100vh - 65px), 500px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: calc(clamp(15px, 1.75vw, 30px) - max(calc(100vh - 65px), 500px) * 0.002);
+}
+body main .container .second .marginedSecond .citate {
+  width: 80%;
+}
+body main .container .second .marginedSecond .citate .title {
+  font-size: 1em;
+  font-family: "KyivType", serif;
+  color: #333333;
+}
+body main .container .second .marginedSecond .citate .text {
+  font-size: 0.6em;
+  font-family: "Kurale", serif;
+  color: #555555;
+}
+body main .container .second .marginedSecond .right {
+  align-self: flex-end;
+}
+body main .container .second .marginedSecond .right .title,
+body main .container .second .marginedSecond .right .text {
+  text-align: right;
+}
+body main .container .second .marginedSecond .center {
+  align-self: center;
+  text-align: center;
+  width: 80%;
+  font-size: 1.2em;
+  font-family: "KyivTypeBold", serif;
+  color: #333333;
+}
+body main .container .gradient {
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  aspect-ratio: 1 / 2;
+  transform: translateX(calc(-100% - 1px));
+  background: linear-gradient(to right, #CCCCCC, transparent);
+}
+body main .heading {
+  width: 94vw;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+body main .heading .stripe {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #333333;
+  position: relative;
+  top: 3px;
+}
+body main .heading .title {
+  font-family: "KyivTypeBolder", serif;
+  color: #333333;
+  font-size: clamp(20px, 4vw, 40px);
+  text-align: right;
+  padding: 0 1vw;
+}
+body main .wrapper {
+  width: 95%;
+  margin: 20px 0;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(max(225px, 30vw), 1fr));
+}
+body main .wrapper .card {
+  background-color: #F5EEE6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 20px;
+  border: solid 4px #333333;
+  transition: box-shadow 0.25s ease;
+  font-size: clamp(15px, 1.5vw, 30px);
+  width: calc(max(225px, 30vw) * 0.9);
+}
+body main .wrapper .card img {
+  width: 100%;
+  height: calc(max(225px, 30vw) * 0.9);
+  border-radius: 15px;
+  border: solid 3px #333333;
+}
+body main .wrapper .card h1 {
+  width: 100%;
+  font-size: 1em;
+  font-family: "KyivTypeBold", serif;
+  color: #333333;
+  text-align: center;
+}
+body main .wrapper .card h2 {
+  width: 100%;
+  font-size: 0.8em;
+  font-family: "KyivType", serif;
+  color: #333333;
+  text-align: center;
+}
+body main .wrapper .card p {
+  width: 100%;
+  font-size: 0.6em;
+  font-family: "Kurale", serif;
+  color: #555555;
+}
+body main .wrapper .card:hover {
+  box-shadow: 0 0 3px 2px #33333388;
+}
+@media (max-width: 1000px) {
+  body main .container {
+    height: auto;
+    flex-direction: column;
+  }
+  body main .container .first {
+    height: auto;
+    width: 100vw;
+    aspect-ratio: auto;
+  }
+  body main .container .first img {
+    width: 100%;
+  }
+  body main .container .second {
+    width: 100vw;
+    margin: max(12px, 2vh) 0;
+    flex-grow: 0;
+  }
+  body main .container .second .marginedSecond {
+    width: 90%;
+    height: auto;
+    gap: max(10px, 1vh);
+    font-size: 3vw;
+  }
+  body main .container .gradient {
+    display: none;
+  }
+}

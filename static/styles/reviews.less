@@ -1,0 +1,136 @@
+@import "general.less";
+
+body{
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .heading{
+            text-align: center;
+            color: @blue3;
+            font-family: "KyivTypeBold", serif;
+            font-size: clamp(30px, 4.5vw, 50px);
+            margin: 10px 0 5px 0;
+            max-width: 95vw;
+            position: relative;
+            padding-right: 1px;
+            &::after{
+                content: "Ваш комфорт — наш пріоритет";
+                color: @gray3;
+                font-family: "KyivTypeBold", serif;
+                font-size: clamp(30px, 4.5vw, 50px);
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                z-index: -1;
+            }
+        }
+        .wrapper{
+            width: 95%;
+            margin: 10px 0;
+            display: grid;
+            justify-items: center;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(max(130px, 22vw), 1fr));
+            .card{
+                background-color: @beige1;
+                display: flex;
+                flex-direction: column;
+                gap: min(7px, 1vw);
+                padding: min(15px, 2vw);
+                border-radius: 20px;
+                border: solid 3px @gray3;
+                width: min-content;
+                transition: box-shadow 0.25s ease;
+                font-size: clamp(15px, 1.75vw, 22px);
+                width: 85%;
+                .user{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    width: 100%;
+                    .avatar{
+                        width: 22.5%;
+                        border-radius: 50%;
+                        border: solid 2px @gray3;
+                    }
+                    .userInfo{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        height: 100%;
+                        flex-grow: 1;
+                        h1{
+                            font-size: 1em;
+                            font-family: "KyivTypeBold", serif;
+                            color: @gray3;
+                        }
+                        h2{
+                            font-size: 0.8em;
+                            font-family: "KyivType", serif;
+                            color: @gray3;
+                        }
+                    }
+                }
+                .stars{
+                    display: inline-flex;
+                    gap: 3px;
+                    svg{
+                        width: max(15px, 1.5vw);
+                        height: auto;
+                        aspect-ratio: 1 / 1;
+                    }
+                    .yellow path{
+                        fill: @yellow;
+                    }
+                }
+                p{
+                    font-family: "Kurale", serif;
+                    color: @gray2;
+                    font-size: 0.7em;
+                    margin-bottom: auto;
+                    overflow: hidden;
+                }
+                h3{
+                    font-family: "Kurale", serif;
+                    color: @gray2;
+                    opacity: 0.5;
+                    font-size: 0.7em;
+                    cursor: pointer;
+                    margin-bottom: auto;
+                    display: none;
+                    width: min-content;
+                }
+                .google{
+                    width: max(50px, 5vw);
+                    height: auto;
+                    aspect-ratio: 118 / 39;
+                    overflow: visible;
+                }
+                &:hover{
+                    box-shadow: 0 0 3px 2px @shadow;
+                }
+            }
+        }
+        a{
+            text-decoration: none;
+            button{
+                background-color: @blue1;
+                border: solid 3px @gray3;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: box-shadow 0.25s ease;
+                font-family: "KyivType", serif;
+                font-size: clamp(15px, 2.5vw, 30px);
+                color: @gray3;
+                padding: 10px 15px;
+                user-select: none;
+                -webkit-user-select: none;
+                margin: 15px 0;
+                &:hover{
+                    box-shadow: 0 0 2px 1px @shadow;
+                }
+            }
+        }
+    }
+}

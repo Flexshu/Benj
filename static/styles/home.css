@@ -1,0 +1,289 @@
+@font-face {
+  font-family: "KyivType";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Regular2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBold";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Medium2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBolder";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Heavy2.woff2) format("woff2");
+}
+body main .container {
+  width: 100%;
+  height: max(calc(100vh - 65px), 500px);
+  display: flex;
+  position: relative;
+}
+body main .gradient {
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  aspect-ratio: 1 / 2;
+}
+body main #one {
+  flex-direction: row-reverse;
+}
+body main #one .first {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #one .first img {
+  height: 100%;
+}
+body main #one .first h1 {
+  color: white;
+  filter: drop-shadow(2px 2px 5px #333333);
+  font-family: "Kurale", serif;
+  font-size: max(8vh, 44px);
+  text-align: center;
+  position: absolute;
+  z-index: 6;
+  line-height: max(24vh, 132px);
+}
+body main #one .first h1 span {
+  font-family: 'Lavishly Yours', cursive;
+  font-size: 4em;
+}
+body main #one .second {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: max(3vw, 30px);
+  position: relative;
+  z-index: 10;
+}
+body main #one .second h1 {
+  font-family: "KyivType", serif;
+  font-size: 1em;
+  text-align: left;
+  color: #2C525A;
+  margin-bottom: 0.5em;
+  margin-right: 3vw;
+  width: 75%;
+}
+body main #one .second h1 #span1 {
+  font-family: "KyivTypeBolder", serif;
+}
+body main #one .second h1 #span2 {
+  font-family: "KyivTypeBold", serif;
+}
+body main #one .second p {
+  font-family: "Kurale", serif;
+  font-size: 0.4em;
+  text-align: right;
+  color: #4A7A82;
+  margin-left: 3vw;
+  width: 75%;
+}
+body main #one #oneGradient {
+  transform: translateX(calc(-100% - 1px));
+  background: linear-gradient(to right, #CCCCCC, transparent);
+}
+body main #two .first {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+body main #two .first img {
+  height: 100%;
+}
+body main #two .second {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: max(3vw, 30px);
+  position: relative;
+  z-index: 10;
+}
+body main #two .second h1 {
+  font-family: "KyivType", serif;
+  font-size: 0.75em;
+  text-align: center;
+  color: #2C525A;
+  margin-bottom: 0.5em;
+  width: 85%;
+  line-height: 150%;
+}
+body main #two .second .buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+body main #two .second .buttonsContainer a .button {
+  padding: 0.25em 0.325em;
+  background-color: #A3BFC5;
+  outline: solid 0.175rem #333333;
+  transition: box-shadow 0.15s ease;
+  border-radius: 10px;
+  display: flex;
+}
+body main #two .second .buttonsContainer a .button:hover {
+  box-shadow: 0 0 3px 3px #33333388;
+}
+body main #two .second .buttonsContainer a .button span {
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: max(2vw, 20px);
+}
+body main #two #twoGradient {
+  transform: translateX(calc(100% + 1px));
+  background: linear-gradient(to left, #CCCCCC, transparent);
+}
+body main #three {
+  flex-direction: row-reverse;
+}
+body main #three .first {
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main #three .first img {
+  height: 92%;
+  filter: drop-shadow(8px 8px 8px #333333);
+  padding: 0 1.5em;
+}
+body main #three .second {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: max(3vw, 30px);
+  position: relative;
+}
+body main #three .second h1 {
+  font-family: "KyivType", serif;
+  font-size: 0.75em;
+  text-align: left;
+  color: #2C525A;
+  margin-bottom: 0.5em;
+  margin-right: 3vw;
+  width: 75%;
+  filter: drop-shadow(1px 1px 1px #333333);
+}
+body main #three .second h2 {
+  font-family: "KyivType", serif;
+  font-size: 0.6em;
+  text-align: right;
+  color: #2C525A;
+  margin-left: 3vw;
+  width: 75%;
+}
+body main #three .second h2 #span3 {
+  font-family: "KyivTypeBold", serif;
+}
+body main #three .second h2 #span4 {
+  font-family: "KyivTypeBolder", serif;
+}
+body main #three .second img {
+  position: absolute;
+  height: max(10vh, 55px);
+}
+body main #three .second #bottle {
+  right: 1.5em;
+  top: 1.25em;
+}
+body main #three .second #scissors {
+  left: 1.5em;
+  bottom: 1.25em;
+  opacity: 0.5;
+}
+@media (max-width: 1000px) {
+  body main .container {
+    height: auto;
+  }
+  body main .gradient {
+    display: none;
+  }
+  body main #one {
+    flex-direction: column;
+  }
+  body main #one .first {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  body main #one .first img {
+    width: 100%;
+  }
+  body main #one .first h1 {
+    font-size: 8vw;
+    line-height: 25vw;
+  }
+  body main #one .second {
+    width: 100vw;
+    margin: 2vh 0;
+    flex-grow: 0;
+  }
+  body main #one .second h1 {
+    width: 80%;
+    font-size: 7vw;
+  }
+  body main #one .second p {
+    width: 80%;
+    font-size: 2.75vw;
+  }
+  body main #two {
+    flex-direction: column;
+  }
+  body main #two .first {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: auto;
+    display: flex;
+    justify-content: center;
+  }
+  body main #two .first img {
+    width: 95%;
+  }
+  body main #two .second {
+    width: 100vw;
+    margin: 2vh 0;
+  }
+  body main #two .second h1 {
+    width: 85vw;
+    font-size: 5vw;
+  }
+  body main #three {
+    flex-direction: column;
+  }
+  body main #three .first {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  body main #three .first img {
+    width: 92%;
+    filter: drop-shadow(6px 6px 6px #333333);
+  }
+  body main #three .second {
+    width: 100vw;
+    margin: 2vh 0;
+  }
+  body main #three .second h1 {
+    width: 80%;
+    font-size: 5vw;
+  }
+  body main #three .second h2 {
+    width: 80%;
+    font-size: 3vw;
+  }
+  body main #three .second img {
+    display: none;
+  }
+}

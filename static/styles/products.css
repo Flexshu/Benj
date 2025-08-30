@@ -1,0 +1,214 @@
+@font-face {
+  font-family: "KyivType";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Regular2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBold";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Medium2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBolder";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Heavy2.woff2) format("woff2");
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .heading {
+  text-align: center;
+  color: #2C525A;
+  font-family: "KyivTypeBold", serif;
+  font-size: clamp(30px, 4.5vw, 50px);
+  margin: 10px 0 5px 0;
+  max-width: 95vw;
+  position: relative;
+  padding-right: 1px;
+}
+body main .heading::after {
+  content: "Косметика, якій можна довіряти";
+  color: #333333;
+  font-family: "KyivTypeBold", serif;
+  font-size: clamp(30px, 4.5vw, 50px);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+}
+body main .subheading {
+  text-align: center;
+  color: #555555;
+  font-family: "Kurale", serif;
+  font-size: clamp(15px, 2.5vw, 25px);
+  margin: 5px 0 5px 0;
+  max-width: 95vw;
+}
+body main .wrapper {
+  width: 97.5vw;
+  margin: 10px 0;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+body main .wrapper .container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  width: max(22.5vw, 150px);
+  font-size: max(2.25vw, 15px);
+}
+body main .wrapper .container img {
+  width: 100%;
+  border-radius: 15px;
+  border: solid 3px #333333;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+body main .wrapper .container img:hover {
+  box-shadow: 0 0 3px 2px #33333388;
+}
+body main .wrapper .container h1 {
+  color: #333333;
+  text-align: center;
+  font-family: "KyivTypeBold", serif;
+  font-size: 0.6em;
+}
+body main .wrapper .container p {
+  color: #333333;
+  text-align: center;
+  font-family: "Kurale", serif;
+  font-size: 0.4em;
+}
+body main .wrapper .container h2 {
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: 0.5em;
+}
+body #windowContainer {
+  position: fixed;
+  z-index: 40;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: auto;
+  transition: opacity 0.25s ease;
+}
+body #windowContainer #popUpWindow {
+  position: relative;
+  z-index: 31;
+  width: 80%;
+  background-color: #CCCCCC;
+  border: solid 5px #333333;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #windowContainer #popUpWindow #name {
+  color: #333333;
+  font-family: "Kurale", serif;
+  font-size: clamp(15px, 3.5vw, 40px);
+  padding: 10px 0;
+}
+body #windowContainer #popUpWindow svg {
+  position: absolute;
+  top: clamp(8px, 3vmin, 15px);
+  right: clamp(8px, 3vmin, 15px);
+  cursor: pointer;
+  transition: filter 0.15s ease;
+  width: max(2vmax, 20px);
+  height: max(2vmax, 20px);
+}
+body #windowContainer #popUpWindow svg:hover {
+  filter: drop-shadow(0 0 1px #33333388);
+}
+body #windowContainer #popUpWindow .info {
+  width: 95%;
+  padding-bottom: 20px;
+  display: flex;
+  gap: 15px;
+}
+body #windowContainer #popUpWindow .info img {
+  border: solid 3px #333333;
+  border-radius: 15px;
+  aspect-ratio: 1 / 1;
+  width: calc(max(calc(100vh - 65px), 500px) * 0.8 * 0.75);
+  user-select: none;
+  -webkit-user-select: none;
+}
+body #windowContainer #popUpWindow .info .description {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: clamp(15px, 1.5vw, 30px);
+}
+body #windowContainer #popUpWindow .info .description p {
+  color: #333333;
+  font-family: "Kurale", serif;
+  font-size: 1em;
+}
+body #windowContainer #popUpWindow .info .description p span {
+  font-size: 0.85em;
+  color: #555555;
+}
+body #windowContainer #popUpWindow .info .description .availability {
+  font-size: 0.85em;
+  color: #3D9B5A;
+}
+body #windowContainer #popUpWindow .info .description .warning {
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.85em;
+  color: #555555;
+}
+body #windowContainer #mainShade {
+  position: fixed;
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+@media (max-height: 415px) {
+  body #windowContainer {
+    align-items: flex-start;
+  }
+}
+@media (max-aspect-ratio: 1.25/1), (max-width: 700px) {
+  body #windowContainer #popUpWindow {
+    width: 90%;
+  }
+  body #windowContainer #popUpWindow .info {
+    flex-direction: column;
+  }
+  body #windowContainer #popUpWindow .info img {
+    align-self: center;
+    width: clamp(min(80vw, 400px), 35vh, 650px);
+  }
+  body #windowContainer #popUpWindow .info .description {
+    font-size: max(15px, 2vh);
+  }
+}
+@media (max-aspect-ratio: 1.25/1) and (max-height: 663px), (max-width: 700px) and (max-height: 663px) {
+  body #windowContainer {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 700px) {
+  body main .wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(max(22.5vw, 150px), 1fr));
+  }
+}

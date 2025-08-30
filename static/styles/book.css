@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "KyivType";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Regular2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBold";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Medium2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBolder";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Heavy2.woff2) format("woff2");
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main h1 {
+  text-align: center;
+  color: #2C525A;
+  font-family: "KyivTypeBold", serif;
+  font-size: clamp(30px, 4.5vw, 50px);
+  margin: 10px 0;
+  max-width: 95vw;
+  position: relative;
+  padding-right: 1px;
+}
+body main h1::after {
+  content: "Заповніть заяву для додавання запису";
+  color: #333333;
+  font-family: "KyivTypeBold", serif;
+  font-size: clamp(30px, 4.5vw, 50px);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  z-index: -1;
+}
+body main h3 {
+  text-align: center;
+  color: #555555;
+  font-family: "Kurale", serif;
+  font-size: clamp(15px, 2.5vw, 25px);
+  margin: 5px 0 5px 0;
+  max-width: 95vw;
+}
+body main form {
+  width: min(90vw, 750px);
+  background-color: #4A7A82;
+  border-radius: 20px;
+  border: solid 5px #2C525A;
+  padding: 5px 10px;
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body main form h2 {
+  color: white;
+  font-family: "KyivTypeBold", serif;
+  font-size: clamp(25px, 3.5vw, 35px);
+  text-shadow: 1px 1px 3px #33333388;
+}
+body main form h2 span {
+  font-family: "Kurale", serif;
+}
+body main form textarea {
+  resize: none;
+  overflow: hidden;
+}
+body main form .wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+body main form .wrapper svg {
+  display: block;
+  width: 2.5%;
+  aspect-ratio: 2 / 1;
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+}
+body main form .wrapper svg path {
+  transition: fill 0.15s ease;
+}
+body main form input,
+body main form textarea,
+body main form .wrapper select {
+  appearance: none;
+  width: 100%;
+  background-color: white;
+  padding: 5px 8px;
+  border: solid 2px white;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #333333;
+  caret-color: #333333;
+  font-family: "KyivType", serif;
+  font-size: clamp(15px, 2.5vw, 24px);
+  cursor: pointer;
+  opacity: 1;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+body main form input:focus,
+body main form textarea:focus,
+body main form .wrapper select:focus {
+  outline: none;
+  border: solid 2px #333333;
+}
+body main form input::placeholder,
+body main form textarea::placeholder,
+body main form .wrapper select::placeholder {
+  color: #555555;
+  transition: color 0.15s ease;
+}
+body main form .wrapper .unavailable,
+body main form .unavailable {
+  cursor: auto;
+}
+body main form .wrapper .unavailable ~ svg path,
+body main form .unavailable ~ svg path {
+  fill: #CCCCCC;
+}
+body main form .wrong,
+body main form .wrapper .wrong {
+  border: solid 2px #B34747;
+  color: #B34747;
+}
+body main form .wrong::placeholder,
+body main form .wrapper .wrong::placeholder {
+  color: #B34747;
+}
+body main form .wrong:focus::placeholder,
+body main form .wrapper .wrong:focus::placeholder {
+  color: #555555;
+}
+body main form button {
+  appearance: none;
+  width: min-content;
+  align-self: center;
+  background-color: #A3BFC5;
+  border: solid 2px #333333;
+  border-radius: 7px;
+  padding: 5px 15px 5px 15px;
+  margin: 10px 0;
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: clamp(20px, 3vw, 30px);
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.15s ease;
+}
+body main form button:hover {
+  box-shadow: 0 0 2px 1px #33333388;
+}

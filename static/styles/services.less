@@ -1,0 +1,260 @@
+@import "general.less";
+
+body{
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1vw;
+        a{
+            #scrollUp{
+                position: fixed;
+                right: 25px;
+                bottom: 25px;
+                z-index: 25;
+                width: 50px;
+                height: 50px;
+                filter: drop-shadow(0 0 3px @gray3);
+                opacity: 0;
+                transition: filter 0.15s ease, opacity 0.25s ease;
+                &:hover{
+                    filter: drop-shadow(0 0 5px @gray3);
+                }
+            }
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 15px 0;
+            .label{
+                width: 94vw;
+                display: flex;
+                align-items: center;
+                .stripe{
+                    flex-grow: 1;
+                    height: 5px;
+                    background-color: @gray3;
+                    position: relative;
+                    top: 3px;
+                }
+                label{
+                    font-family: "KyivTypeBold", serif;
+                    color: @gray3;
+                    font-size: clamp(20px, 4vw, 40px);
+                    text-align: right;
+                    padding: 0 1vw;
+                }
+            }
+            .selectContainer{
+                position: relative;
+                height: clamp(30px, 4.25vw, 45px);
+                display: flex;
+                align-items: center;
+                select{
+                    cursor: pointer;
+                    appearance: none;
+                    background-color: @blue1;
+                    border: solid 2px @gray3;
+                    border-radius: 5px;
+                    height: 100%;
+                    padding: 0 30px 0 5px;
+                    color: @gray3;
+                    font-family: "KyivType", serif;
+                    font-size: clamp(15px, 2.5vw, 25px);
+                    transition: box-shadow 0.15s ease;
+                    &:hover{
+                        border: solid 2px @gray3;
+                        box-shadow: 0 0 1px 1px @shadow;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                svg{
+                    display: block;
+                    height: 20%;
+                    width: calc(clamp(30px, 4vw, 40px) * 0.4);
+                    position: absolute;
+                    right: 10px;
+                    top: 40%;
+                    pointer-events: none;
+                }
+            }
+            button{
+                appearance: none;
+                background-color: @blue1;
+                border: solid 2px @gray3;
+                border-radius: 5px;
+                padding: 5px 15px 5px 15px;
+                color: @gray3;
+                font-family: "KyivType", serif;
+                font-size: clamp(15px, 2.5vw, 25px);
+                cursor: pointer;
+                user-select: none;
+                transition: box-shadow 0.15s ease;
+                &:hover{
+                    box-shadow: 0 0 1px 1px @shadow;
+                }
+            }
+        }
+        .container{
+            width: 100%;
+            height: @containrHeight;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .heading{
+                width: calc(100% - 6vw);
+                height: 10%;
+                display: flex;
+                align-items: center;
+                h1{
+                    font-family: "KyivTypeBolder", serif;
+                    font-size: clamp(1rem, 5em, 3rem);
+                    padding: 0 1.75vw;
+                    color: @gray3;
+                }
+                .stripe{
+                    flex-grow: 1;
+                    height: 10%;
+                    background-color: @gray3;
+                    position: relative;
+                    top: 6%;
+                }
+            }
+            .description{
+                width: calc(100% - 6vw);
+                height: 90%;
+                display: flex;
+                align-items: center;
+                img{
+                    max-height: 90%;
+                    max-width: min(50vw, 550px);
+                    filter: drop-shadow(8px 8px 8px @gray3);
+                    margin-right: 3vw;
+                }
+                .priceList{
+                    height: 100%;
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    font-size: clamp(4vh, 3vw, 30px);
+                    .border{
+                        width: 100%;
+                        height: 0.5%;
+                        background-color: #55555536;
+                    }
+                    .service{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        h2{
+                            color: @gray2;
+                            font-size: 0.5em;
+                            font-family: "KyivType", serif;
+                            line-height: 1.5em;
+                        }
+                        .name{
+                            margin-right: auto;
+                            padding-right: 2.5em;
+                        }
+                        .price{
+                            white-space: nowrap;
+                        }
+                    }
+                    a{
+                        .button{
+                            padding: 0.25em 0.325em;
+                            background-color: @blue1;
+                            outline: solid 0.175rem @gray3;
+                            transition: box-shadow 0.15s ease;
+                            border-radius: 10px;
+                            display: flex;
+                            &:hover{
+                                box-shadow: 0 0 3px 3px @shadow;
+                            }
+                            span{
+                                color: @gray3;
+                                font-family: "KyivType", serif;
+                                font-size: max(2vw, 20px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mirrored{
+            .description{
+                flex-direction: row-reverse;
+                img{
+                    margin-right: 0;
+                    margin-left: 3vw;
+                }
+            }
+        }
+        .cut{
+            height: calc(@containrHeight * 0.9);
+            .description{
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    body{
+        main{
+            form{
+                margin-bottom: 0;
+                .label{
+                    .stripe{
+                        height: 0.65vw;
+                    }
+                }
+            }
+            .container{
+                height: auto;
+                margin: 10px 0;
+                .heading{
+                    height: max(7.5vh, 7vw);
+                    box-sizing: border-box;
+                    .stripe{
+                        height: 0.75vw;
+                    }
+                }
+                .description{
+                    .priceList{
+                        .border{
+                            height: max(0.25vh, 2px);
+                            width: 100%;
+                        }
+                        .last{
+                            display: none;
+                        }
+                        .service{
+                            padding: max(1vh, 5px) 0;
+                        }
+                        a{
+                            margin: max(1.25vh, 7px) 0;
+                        }
+                    }
+                    img{
+                        display: none;
+                    }
+                }
+            }
+            .partial{
+                margin-bottom: 0;
+            }
+            .cut{
+                height: auto;
+                margin-top: 0;
+            }
+        }
+    }
+}

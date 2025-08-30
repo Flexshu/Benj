@@ -1,0 +1,188 @@
+@import "general.less";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: @gray1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    header{
+        top: 0;
+        position: sticky;
+        z-index: 20;
+        background-color: @beige1;
+        width: 100%;
+        height: @headerHeight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img, svg{
+            height: 38px;
+            position: absolute;
+        }
+        #benjLogo{
+            left: 10px;
+        }
+        #burger{
+            right: 10px;
+            display: none;
+            width: auto;
+            overflow: visible;
+        }
+        #burger:hover{
+            cursor: pointer;
+        }
+        h1{
+            font-size: 23px;
+            padding: 1em 0.4em;
+            color: @beige3;
+            font-family: 'Kurale', serif;
+            font-weight: 100;
+            box-shadow: none;
+            transition: box-shadow 0.15s ease;
+            &:hover{
+                box-shadow: 0 1px 3px 2px #bba993c0;
+            }
+        }
+        #currentPage{
+            color: @beige1;
+            background-color: @beige3;
+        }
+    }
+    #menu{
+        position: fixed;
+        z-index: 21;
+        width: 100%;
+        background-color: @beige1;
+        padding-bottom: 5px;
+        overflow-y: auto;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: top 0.25s ease;
+        .hiddenImgs{
+            width: 100%;
+            padding: 13.5px 0;
+            display: flex;
+            align-items: center;
+            margin-top: 0.25rem;
+            img, svg{
+                height: 38px;
+            }
+            #hiddenBenjLogo{
+                margin-right: auto;
+                margin-left: 10px;
+            }
+            #hiddenBurger{
+                margin-right: 10px;
+                width: auto;
+                overflow: visible;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        h1{
+            font-size: 23px;
+            padding: 0.4em 1em;
+            color: @beige3;
+            font-family: 'Kurale', serif;
+            font-weight: 100;
+            box-shadow: none;
+            transition: box-shadow 0.15s ease;
+            &:hover{
+                box-shadow: 0 1px 3px 2px #bba993c0;
+            }
+        }
+        #hiddenCurrentPage{
+            color: @beige1;
+            background-color: @beige3;
+        }
+    }
+    #shade{
+        position: fixed;
+        z-index: 19;
+        width: 100vw;
+        height: 100vh;
+        background-color: @gray3;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+    main{
+        flex: 1;
+    }
+    footer{
+        width: 100%;
+        height: auto;
+        background-color: @beige1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        align-content: center;
+        .footerPoint{
+            flex-basis: 25%;
+            padding: 1em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-family: 'KyivType', serif;
+                font-size: clamp(0.85em, 2vw, 1.5em);
+                color: @gray3;
+                padding: 0.2em 0;
+            }
+            p{
+                font-family: 'Kurale', serif;
+                font-size: clamp(0.75em, 1.85vw, 1.35em);
+                color: @gray2;
+                padding: 0.1em 0;
+                svg{
+                    height: 1.15em;
+                    width: auto;
+                    vertical-align: middle;
+                    overflow: visible;
+                    transform: translateY(-10%);
+                }
+            }
+            .pShort{
+                padding-top: calc(clamp(0.75em, 1.85vw, 1.35em) + 0.1em);
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    body{
+        header{
+            #burger{
+                display: block;
+            }
+            h1{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 760px){
+    body{
+        footer{
+            .footerPoint{
+                padding: 0.5em 0;
+                flex-basis: 50%;
+                .pShort{
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,251 @@
+@font-face {
+  font-family: "KyivType";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Regular2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBold";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Medium2.woff2) format("woff2");
+}
+@font-face {
+  font-family: "KyivTypeBolder";
+  src: url(../fonts/kyivtype/KyivType-NoVariable/WEB/KyivTypeSans-Heavy2.woff2) format("woff2");
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1vw;
+}
+body main a #scrollUp {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 25;
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 3px #333333);
+  opacity: 0;
+  transition: filter 0.15s ease, opacity 0.25s ease;
+}
+body main a #scrollUp:hover {
+  filter: drop-shadow(0 0 5px #333333);
+}
+body main form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 15px 0;
+}
+body main form .label {
+  width: 94vw;
+  display: flex;
+  align-items: center;
+}
+body main form .label .stripe {
+  flex-grow: 1;
+  height: 5px;
+  background-color: #333333;
+  position: relative;
+  top: 3px;
+}
+body main form .label label {
+  font-family: "KyivTypeBold", serif;
+  color: #333333;
+  font-size: clamp(20px, 4vw, 40px);
+  text-align: right;
+  padding: 0 1vw;
+}
+body main form .selectContainer {
+  position: relative;
+  height: clamp(30px, 4.25vw, 45px);
+  display: flex;
+  align-items: center;
+}
+body main form .selectContainer select {
+  cursor: pointer;
+  appearance: none;
+  background-color: #A3BFC5;
+  border: solid 2px #333333;
+  border-radius: 5px;
+  height: 100%;
+  padding: 0 30px 0 5px;
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: clamp(15px, 2.5vw, 25px);
+  transition: box-shadow 0.15s ease;
+}
+body main form .selectContainer select:hover {
+  border: solid 2px #333333;
+  box-shadow: 0 0 1px 1px #33333388;
+}
+body main form .selectContainer select:focus {
+  outline: none;
+}
+body main form .selectContainer svg {
+  display: block;
+  height: 20%;
+  width: calc(clamp(30px, 4vw, 40px) * 0.4);
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  pointer-events: none;
+}
+body main form button {
+  appearance: none;
+  background-color: #A3BFC5;
+  border: solid 2px #333333;
+  border-radius: 5px;
+  padding: 5px 15px 5px 15px;
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: clamp(15px, 2.5vw, 25px);
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.15s ease;
+}
+body main form button:hover {
+  box-shadow: 0 0 1px 1px #33333388;
+}
+body main .container {
+  width: 100%;
+  height: max(calc(100vh - 65px), 500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .container .heading {
+  width: calc(100% - 6vw);
+  height: 10%;
+  display: flex;
+  align-items: center;
+}
+body main .container .heading h1 {
+  font-family: "KyivTypeBolder", serif;
+  font-size: clamp(1rem, 5em, 3rem);
+  padding: 0 1.75vw;
+  color: #333333;
+}
+body main .container .heading .stripe {
+  flex-grow: 1;
+  height: 10%;
+  background-color: #333333;
+  position: relative;
+  top: 6%;
+}
+body main .container .description {
+  width: calc(100% - 6vw);
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
+body main .container .description img {
+  max-height: 90%;
+  max-width: min(50vw, 550px);
+  filter: drop-shadow(8px 8px 8px #333333);
+  margin-right: 3vw;
+}
+body main .container .description .priceList {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: clamp(4vh, 3vw, 30px);
+}
+body main .container .description .priceList .border {
+  width: 100%;
+  height: 0.5%;
+  background-color: #55555536;
+}
+body main .container .description .priceList .service {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+body main .container .description .priceList .service h2 {
+  color: #555555;
+  font-size: 0.5em;
+  font-family: "KyivType", serif;
+  line-height: 1.5em;
+}
+body main .container .description .priceList .service .name {
+  margin-right: auto;
+  padding-right: 2.5em;
+}
+body main .container .description .priceList .service .price {
+  white-space: nowrap;
+}
+body main .container .description .priceList a .button {
+  padding: 0.25em 0.325em;
+  background-color: #A3BFC5;
+  outline: solid 0.175rem #333333;
+  transition: box-shadow 0.15s ease;
+  border-radius: 10px;
+  display: flex;
+}
+body main .container .description .priceList a .button:hover {
+  box-shadow: 0 0 3px 3px #33333388;
+}
+body main .container .description .priceList a .button span {
+  color: #333333;
+  font-family: "KyivType", serif;
+  font-size: max(2vw, 20px);
+}
+body main .mirrored .description {
+  flex-direction: row-reverse;
+}
+body main .mirrored .description img {
+  margin-right: 0;
+  margin-left: 3vw;
+}
+body main .cut {
+  height: calc(max(calc(100vh - 65px), 500px) * 0.9);
+}
+body main .cut .description {
+  height: 100%;
+}
+@media (max-width: 1000px) {
+  body main form {
+    margin-bottom: 0;
+  }
+  body main form .label .stripe {
+    height: 0.65vw;
+  }
+  body main .container {
+    height: auto;
+    margin: 10px 0;
+  }
+  body main .container .heading {
+    height: max(7.5vh, 7vw);
+    box-sizing: border-box;
+  }
+  body main .container .heading .stripe {
+    height: 0.75vw;
+  }
+  body main .container .description .priceList .border {
+    height: max(0.25vh, 2px);
+    width: 100%;
+  }
+  body main .container .description .priceList .last {
+    display: none;
+  }
+  body main .container .description .priceList .service {
+    padding: max(1vh, 5px) 0;
+  }
+  body main .container .description .priceList a {
+    margin: max(1.25vh, 7px) 0;
+  }
+  body main .container .description img {
+    display: none;
+  }
+  body main .partial {
+    margin-bottom: 0;
+  }
+  body main .cut {
+    height: auto;
+    margin-top: 0;
+  }
+}

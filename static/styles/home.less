@@ -1,0 +1,292 @@
+@import "general.less";
+
+body{
+    main{
+        .container{
+            width: 100%;
+            height: @containrHeight;
+            display: flex;
+            position: relative;
+        }
+        .gradient{
+            position: absolute;
+            z-index: 5;
+            height: 100%;
+            aspect-ratio: 1 / 2;
+        }
+        #one{
+            flex-direction: row-reverse;
+            .first{
+                height: 100%;
+                aspect-ratio: 1 / 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 100%;
+                }
+                h1{
+                    color: white;
+                    filter: drop-shadow(2px 2px 5px @gray3);
+                    font-family: "Kurale", serif;
+                    font-size: max(8vh, 44px);
+                    text-align: center;
+                    position: absolute;
+                    z-index: 6;
+                    line-height: max(24vh, 132px);
+                    span{
+                        font-family: 'Lavishly Yours', cursive;
+                        font-size: 4em;
+                    }
+                }
+            }
+            .second{
+                height: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: max(3vw, 30px);
+                position: relative;
+                z-index: 10;
+                h1{
+                    font-family: "KyivType", serif;
+                    font-size: 1em;
+                    text-align: left;
+                    color: @blue3;
+                    margin-bottom: 0.5em;
+                    margin-right: 3vw;
+                    width: 75%;
+                    #span1{
+                        font-family: "KyivTypeBolder", serif;
+                    }
+                    #span2{
+                        font-family: "KyivTypeBold", serif;
+                    }
+                }
+                p{
+                    font-family: "Kurale", serif;
+                    font-size: 0.4em;
+                    text-align: right;
+                    color: @blue2;
+                    margin-left: 3vw;
+                    width: 75%;
+                }
+            }
+            #oneGradient{
+                transform: translateX(calc(-100% - 1px));
+                background: linear-gradient(to right, @gray1, transparent);
+            }
+        }
+        #two{
+            .first{
+                height: 100%;
+                aspect-ratio: 1 / 1;
+                img{
+                    height: 100%;
+                }
+            }
+            .second{
+                height: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: max(3vw, 30px);
+                position: relative;
+                z-index: 10;
+                h1{
+                    font-family: "KyivType", serif;
+                    font-size: 0.75em;
+                    text-align: center;
+                    color: @blue3;
+                    margin-bottom: 0.5em;
+                    width: 85%;
+                    line-height: 150%;
+                }
+                .buttonsContainer{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 1.25rem;
+                    a{
+                        .button{
+                            padding: 0.25em 0.325em;
+                            background-color: @blue1;
+                            outline: solid 0.175rem @gray3;
+                            transition: box-shadow 0.15s ease;
+                            border-radius: 10px;
+                            display: flex;
+                            &:hover{
+                                box-shadow: 0 0 3px 3px @shadow;
+                            }
+                            span{
+                                color: @gray3;
+                                font-family: "KyivType", serif;
+                                font-size: max(2vw, 20px);
+                            }
+                        }
+                    }
+                }
+            }
+            #twoGradient{
+                transform: translateX(calc(100% + 1px));
+                background: linear-gradient(to left, @gray1, transparent);
+            }
+        }
+        #three{
+            flex-direction: row-reverse;
+            .first{
+                height: 100%;
+                aspect-ratio: 3 / 4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 92%;
+                    filter: drop-shadow(8px 8px 8px @gray3);
+                    padding: 0 1.5em;
+                }
+            }
+            .second{
+                height: 100%;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-size: max(3vw, 30px);
+                position: relative;
+                h1{
+                    font-family: "KyivType", serif;
+                    font-size: 0.75em;
+                    text-align: left;
+                    color: @blue3;
+                    margin-bottom: 0.5em;
+                    margin-right: 3vw;
+                    width: 75%;
+                    filter: drop-shadow(1px 1px 1px @gray3);
+                }
+                h2{
+                    font-family: "KyivType", serif;
+                    font-size: 0.6em;
+                    text-align: right;
+                    color: @blue3;
+                    margin-left: 3vw;
+                    width: 75%;
+                    #span3{
+                        font-family: "KyivTypeBold", serif;
+                    }
+                    #span4{
+                        font-family: "KyivTypeBolder", serif;
+                    }
+                }
+                img{
+                    position: absolute;
+                    height: max(10vh, 55px);
+                }
+                #bottle{
+                    right: 1.5em;
+                    top: 1.25em;
+                }
+                #scissors{
+                    left: 1.5em;
+                    bottom: 1.25em;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    body{
+        main{
+            .container{
+                height: auto;
+            }
+            .gradient{
+                display: none;
+            }
+            #one{
+                flex-direction: column;
+                .first{
+                    width: 100vw;
+                    height: auto;
+                    aspect-ratio: auto;
+                    img{
+                        width: 100%;
+                    }
+                    h1{
+                        font-size: 8vw;
+                        line-height: 25vw;
+                    }
+                }
+                .second{
+                    width: 100vw;
+                    margin: 2vh 0;
+                    flex-grow: 0;
+                    h1{
+                        width: 80%;
+                        font-size: 7vw;
+                    }
+                    p{
+                        width: 80%;
+                        font-size: 2.75vw;
+                    }
+                }
+            }
+            #two{
+                flex-direction: column;
+                .first{
+                    width: 100vw;
+                    height: auto;
+                    aspect-ratio: auto;
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        width: 95%;
+                    }
+                }
+                .second{
+                    width: 100vw;
+                    margin: 2vh 0;
+                    h1{
+                        width: 85vw;
+                        font-size: 5vw;
+                    }
+                }
+            }
+            #three{
+                flex-direction: column;
+                .first{
+                    width: 100vw;
+                    height: auto;
+                    aspect-ratio: auto;
+                    img{
+                        width: 92%;
+                        filter: drop-shadow(6px 6px 6px @gray3);
+                    }
+                }
+                .second{
+                    width: 100vw;
+                    margin: 2vh 0;
+                    h1{
+                        width: 80%;
+                        font-size: 5vw;
+                    }
+                    h2{
+                        width: 80%;
+                        font-size: 3vw;
+                    }
+                    img{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
