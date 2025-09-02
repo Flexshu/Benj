@@ -3,38 +3,38 @@ import flask as f
 import flask_limiter as fl
 import os
 
-flask: f.Flask = f.Flask(__name__)
-limiter: fl.Limiter = fl.Limiter(
-    app = flask,
+app = f.Flask(__name__)
+limiter = fl.Limiter(
+    app = app,
     key_func = lambda: f.request.remote_addr
 )
 
-@flask.route("/")
-@flask.route("/home")
+@app.route("/")
+@app.route("/home")
 def home():
     return f.render_template("home.html")
 
-@flask.route("/services")
+@app.route("/services")
 def services():
     return f.render_template("services.html")
 
-@flask.route("/book")
+@app.route("/book")
 def book():
     return f.render_template("book.html")
 
-@flask.route("/products")
+@app.route("/products")
 def products():
     return f.render_template("products.html")
 
-@flask.route("/location")
+@app.route("/location")
 def location():
     return f.render_template("location.html")
 
-@flask.route("/aboutUs")
+@app.route("/aboutUs")
 def aboutUs():
     return f.render_template("aboutUs.html")
 
-@flask.route("/reviews")
+@app.route("/reviews")
 def reviews():
     return f.render_template("reviews.html")
 
@@ -70,7 +70,7 @@ def defineMasterId(name: str) -> int:
         case _:
             return None
 
-@flask.route("/submit", methods = ["POST"])
+@app.route("/submit", methods = ["POST"])
 @limiter.limit("5 per hour")
 def submit():
     connection = establishConnection()
@@ -107,7 +107,7 @@ def getAppointments(date: str) -> list:
     transformedAppointments: list = [(row[0].hour, row[1], row[2]) for row in appointments]
     return transformedAppointments
 
-@flask.route("/sendHours", methods = ["POST"])
+@app.route("/sendHours", methods = ["POST"])
 @limiter.limit("10 per minute")
 def sendHours():
     date: str = f.request.form.get("date")
@@ -115,4 +115,4 @@ def sendHours():
 
 if __name__ == "__main__":
     port: int = int(os.environ.get("PORT", 5000))
-    flask.run(host="0.0.0.0", port = port)
+    app.run(host="0.0.0.0", port = port)
