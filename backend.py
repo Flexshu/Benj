@@ -4,6 +4,7 @@ import flask_limiter as fl
 import os
 
 app = f.Flask(__name__)
+application = app
 limiter = fl.Limiter(
     app = app,
     key_func = lambda: f.request.remote_addr
