@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benj</title>
     <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../static/img/LogoEtc/icon.png">
-    <link rel="stylesheet" href="../static/styles/header&footer.css">
-    <link rel="stylesheet" href="../static/styles/aboutUs.css">
-    <script src="../static/scripts/burger.js" defer></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/LogoEtc/icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header&footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/aboutUs.css') }}">
+    <script src="{{ url_for('static', filename='scripts/burger.js') }}" defer></script>
 </head>
 <body>
     <header>
-        <img src="../static/img/LogoEtc/BenjLogoClear.png" alt="Benj Icon" id="benjLogo">
+        <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Benj Icon" id="benjLogo">
         <a href="home" style="text-decoration: none;"><h1>Головна</h1></a>
         <a href="services" style="text-decoration: none;"><h1>Послуги</h1></a>
         <a href="book" style="text-decoration: none;"><h1>Записатися</h1></a>
@@ -24,7 +24,7 @@
     </header>
     <div id="menu">
         <div class="hiddenImgs">
-            <img src="../static/img/LogoEtc/BenjLogoClear.png" alt="Benj Icon" id="hiddenBenjLogo">
+            <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Benj Icon" id="hiddenBenjLogo">
             <svg id="hiddenBurger" width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="6" fill="#C6B49B"/><rect y="12" width="34" height="6" fill="#C6B49B"/><rect y="24" width="34" height="6" fill="#C6B49B"/></svg>
         </div>
         <a href="home" style="text-decoration: none;"><h1>Головна</h1></a>
@@ -39,7 +39,7 @@
     <main>
         <div class="container">
             <div class="first">
-                <img src="../static/img/Photos/staff1.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/staff1.png') }}" alt="">
             </div>
             <div class="second">
                 <div class="marginedSecond">
@@ -67,49 +67,49 @@
             </div>
         <div class="wrapper">
             <div class="card">
-                <img src="../static/img/Photos/employee1.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee1.png') }}" alt="">
                 <h1>Вадим Толстік</h1>
                 <h2>Директор і масажист</h2>
                 <p>Вадим — не лише вправний і талановитий масажист, а й уважний та дбайливий директор, який своїми діями заслужив довіру як співробітників, так і клієнтів. Він завжди створює дружню атмосферу та надихає команду дарувати клієнтам ще більше гарних вражень.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee2.jpg" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee2.jpg') }}" alt="">
                 <h1>Єлизавета Анохіна</h1>
                 <h2>Барберка</h2>
                 <p>Єлизавета може й підстригти, і поголити, і підтримати розмову на будь-яку тему: від PlayStation до “чому вона не пише”. Після її стрижки Ви або знайдеш нову дівчину, або повернеш стару. Перевірено на клієнтах. Єлизавета закінчила коледж на перукаря та курси барбінгу в академії "PlanB".</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee8.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee8.png') }}" alt="">
                 <h1>Анна Кононенко</h1>
                 <h2>Стилістка із волосся</h2>
                 <p>Анна — стиліст із волосся, яка вміє перетворювати звичайні пасма на ефектні образи. За її плечима понад сто щасливих красунь, кожна з яких отримала не лише зачіску, а й впевненість у собі. Вона працює з волоссям не лише руками, а й з душею, підбираючи образ під риси обличчя, стиль та настрій, аби кожен відвідувач отримав свій розкішний look.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee3.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee3.png') }}" alt="">
                 <h1>Арміне Караханян</h1>
                 <h2>Майстриня брів і вій</h2>
                 <p>Арміне дуже любить свою роботу — вона завжди прагне вдосконалюватися та радувати клієнток ідеальними бровами й доглянутими віями. Постійно відвідує майстер-класи, аби бути в курсі трендів і працювати тільки з найкращими техніками.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee7.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee7.png') }}" alt="">
                 <h1>Дарʼя Куриленко</h1>
                 <h2>Майстриня брів</h2>
                 <p>Дар'я створює таку форму брів, яка підкреслює Вашу природну красу та гармонію обличчя. У своїй роботі вона ставить на перше місце акуратність та індивідуальний підхід до кожної клієнтки, адже кожні брови — це унікальна історія, а її задача — зробити її максимально красивою. Дарʼя має трирічний досвід у бьюті-сфері.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee4.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee4.png') }}" alt="">
                 <h1>Аврора Котляр</h1>
                 <h2>Майстриня манікюру й педикюру</h2>
                 <p>Аврора щиро любить свою справу, завжди радіє спілкуванню з клієнтами та робить усе, щоби кожна з них почувалася особливою. Аврора постійно вдосконалюється та із задоволенням відкриває для себе нові техніки й ідеї, щоб дарувати ще більше краси та чудового настрою.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee5.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee5.png') }}" alt="">
                 <h1>Єлизавета Теплинська</h1>
                 <h2>Майстриня манікюру й педикюру</h2>
                 <p>Єлизавета — майстриня з трирічним досвідом роботи. Вона з легкістю підтримує будь-яку розмову та завжди уважна до забаганок своїх клієнтів. Для Єлизавети манікюр та педикюр — це не просто фарбування нігтів, а справжнє мистецтво.</p>
             </div>
             <div class="card">
-                <img src="../static/img/Photos/employee6.png" alt="">
+                <img src="{{ url_for('static', filename='img/Photos/employee6.png') }}" alt="">
                 <h1>Ірина Білоусова</h1>
                 <h2>Майстриня манікюру й педикюру</h2>
                 <p>Ірина працює не лише руками, а й серцем та душею. Вона завжди дбає про те, щоби процедура не лише мала відмінний результат, а й була приємною для клієнтів. Її уважність до деталей, чистота робочого місця та щира любов до своєї справи гідні справжньої поваги.</p>
@@ -119,7 +119,7 @@
     <footer>
         <div class="footerPoint">
             <h1>Соціальні мережі</h1>
-            <a href="https://www.instagram.com/benj.beauty/" style="text-decoration: none;" target="_blank">
+            <a href="https://www.instagram.com/benj_space_of_beauty/" style="text-decoration: none;" target="_blank">
                 <p><svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0.333313H24C29.3334 0.333313 33.6667 4.66665 33.6667 9.99998V24C33.6667 26.5637 32.6483 29.0225 30.8354 30.8353C29.0226 32.6482 26.5638 33.6666 24 33.6666H10C4.66671 33.6666 0.333374 29.3333 0.333374 24V9.99998C0.333374 7.43622 1.35182 4.97747 3.16468 3.16461C4.97753 1.35176 7.43628 0.333313 10 0.333313ZM9.66671 3.66665C8.07541 3.66665 6.54928 4.29879 5.42407 5.42401C4.29885 6.54922 3.66671 8.07535 3.66671 9.66665V24.3333C3.66671 27.65 6.35004 30.3333 9.66671 30.3333H24.3334C25.9247 30.3333 27.4508 29.7012 28.576 28.576C29.7012 27.4507 30.3334 25.9246 30.3334 24.3333V9.66665C30.3334 6.34998 27.65 3.66665 24.3334 3.66665H9.66671ZM25.75 6.16665C26.3026 6.16665 26.8325 6.38614 27.2232 6.77684C27.6139 7.16754 27.8334 7.69744 27.8334 8.24998C27.8334 8.80251 27.6139 9.33242 27.2232 9.72312C26.8325 10.1138 26.3026 10.3333 25.75 10.3333C25.1975 10.3333 24.6676 10.1138 24.2769 9.72312C23.8862 9.33242 23.6667 8.80251 23.6667 8.24998C23.6667 7.69744 23.8862 7.16754 24.2769 6.77684C24.6676 6.38614 25.1975 6.16665 25.75 6.16665ZM17 8.66665C19.2102 8.66665 21.3298 9.54462 22.8926 11.1074C24.4554 12.6702 25.3334 14.7898 25.3334 17C25.3334 19.2101 24.4554 21.3297 22.8926 22.8925C21.3298 24.4553 19.2102 25.3333 17 25.3333C14.7899 25.3333 12.6703 24.4553 11.1075 22.8925C9.54468 21.3297 8.66671 19.2101 8.66671 17C8.66671 14.7898 9.54468 12.6702 11.1075 11.1074C12.6703 9.54462 14.7899 8.66665 17 8.66665ZM17 12C15.674 12 14.4022 12.5268 13.4645 13.4644C12.5268 14.4021 12 15.6739 12 17C12 18.3261 12.5268 19.5978 13.4645 20.5355C14.4022 21.4732 15.674 22 17 22C18.3261 22 19.5979 21.4732 20.5356 20.5355C21.4733 19.5978 22 18.3261 22 17C22 15.6739 21.4733 14.4021 20.5356 13.4644C19.5979 12.5268 18.3261 12 17 12Z" fill="#555555"/></svg> Instagram</p>
             </a>
             <a href="https://www.tiktok.com/@benj_beauty" style="text-decoration: none;" target="_blank">

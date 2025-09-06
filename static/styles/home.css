@@ -269,7 +269,7 @@ body main #three .second #scissors {
   }
   body main #three .first img {
     width: 92%;
-    filter: drop-shadow(6px 6px 6px #333333);
+    filter: drop-shadow(1vmin 1vmin 1vmin #333333);
   }
   body main #three .second {
     width: 100vw;

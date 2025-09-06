@@ -1,41 +1,41 @@
 import psycopg2 as p
 import flask as f
-import flask_limiter as fl
+# import flask_limiter as fl
 import os
 
-app = f.Flask(__name__)
-application = app
-limiter = fl.Limiter(
-    app = app,
-    key_func = lambda: f.request.remote_addr
-)
+flask: f.Flask = f.Flask(__name__)
+application = flask
+#limiter: fl.Limiter = fl.Limiter(
+    #app = flask,
+    #key_func = lambda: f.request.remote_addr
+#)
 
-@app.route("/")
-@app.route("/home")
+@flask.route("/")
+@flask.route("/home")
 def home():
     return f.render_template("home.html")
 
-@app.route("/services")
+@flask.route("/services")
 def services():
     return f.render_template("services.html")
 
-@app.route("/book")
+@flask.route("/book")
 def book():
     return f.render_template("book.html")
 
-@app.route("/products")
+@flask.route("/products")
 def products():
     return f.render_template("products.html")
 
-@app.route("/location")
+@flask.route("/location")
 def location():
     return f.render_template("location.html")
 
-@app.route("/aboutUs")
+@flask.route("/aboutUs")
 def aboutUs():
     return f.render_template("aboutUs.html")
 
-@app.route("/reviews")
+@flask.route("/reviews")
 def reviews():
     return f.render_template("reviews.html")
 
@@ -71,8 +71,8 @@ def defineMasterId(name: str) -> int:
         case _:
             return None
 
-@app.route("/submit", methods = ["POST"])
-@limiter.limit("5 per hour")
+@flask.route("/submit", methods = ["POST"])
+#@limiter.limit("5 per hour")
 def submit():
     connection = establishConnection()
 
@@ -108,12 +108,12 @@ def getAppointments(date: str) -> list:
     transformedAppointments: list = [(row[0].hour, row[1], row[2]) for row in appointments]
     return transformedAppointments
 
-@app.route("/sendHours", methods = ["POST"])
-@limiter.limit("10 per minute")
+@flask.route("/sendHours", methods = ["POST"])
+#@limiter.limit("10 per minute")
 def sendHours():
     date: str = f.request.form.get("date")
     return f.jsonify(getAppointments(date))
 
 if __name__ == "__main__":
     port: int = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port = port)
+    flask.run(host="0.0.0.0", port = port, debug = True)
