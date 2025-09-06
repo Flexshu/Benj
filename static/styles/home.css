@@ -268,8 +268,8 @@ body main #three .second #scissors {
     aspect-ratio: auto;
   }
   body main #three .first img {
-    width: 92%;
-    filter: drop-shadow(1vmin 1vmin 1vmin #333333);
+    width: 90%;
+    filter: drop-shadow(4px 4px 4px #333333);
   }
   body main #three .second {
     width: 100vw;

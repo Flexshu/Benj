@@ -166,6 +166,7 @@ body main .container .description .priceList .service {
   align-items: center;
 }
 body main .container .description .priceList .service h2 {
+  text-decoration: none;
   color: #555555;
   font-size: 0.5em;
   font-family: "KyivType", serif;

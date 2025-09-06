@@ -156,6 +156,7 @@ body footer .footerPoint h1 {
   padding: 0.2em 0;
 }
 body footer .footerPoint p {
+  text-decoration: none;
   font-family: 'Kurale', serif;
   font-size: clamp(0.75em, 1.85vw, 1.35em);
   color: #555555;
