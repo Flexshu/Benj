@@ -11,7 +11,7 @@ body{
             font-family: "KyivTypeBold", serif;
             font-size: clamp(30px, 4.5vw, 50px);
             margin: 10px 0;
-            max-width: 95vw;
+            max-width: 90vw;
             position: relative;
             padding-right: 1px;
             &::after{
@@ -31,13 +31,13 @@ body{
             font-family: "Kurale", serif;
             font-size: clamp(15px, 2.5vw, 25px);
             margin: 5px 0 5px 0;
-            max-width: 95vw;
+            max-width: 90vw;
         }
         form{
             width: min(85vw, 750px);
             background-color: @blue2;
-            border-radius: 20px;
-            border: solid 5px @blue3;
+            border-radius: clamp(13px, 3vw, 20px);
+            border: solid clamp(3px, 0.5vw, 5px) @blue3;
             padding: 5px 10px;
             margin: 10px 0 20px 0;
             display: flex;

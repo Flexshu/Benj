@@ -110,8 +110,8 @@ body #windowContainer #popUpWindow {
   position: relative;
   z-index: 31;
   background-color: #CCCCCC;
-  border: solid 5px #333333;
-  border-radius: 25px;
+  border: solid clamp(3px, 0.5vw, 5px) #333333;
+  border-radius: clamp(17px, 3.2vw, 25px);
   padding: min(25px, 3vw);
   padding-top: 15px;
   overflow-y: auto;
@@ -124,6 +124,7 @@ body #windowContainer #popUpWindow #name {
   color: #333333;
   font-family: "Kurale", serif;
   font-size: clamp(20px, 3.75vw, 4.75vh);
+  text-align: center;
 }
 body #windowContainer #popUpWindow #name #locationIcon {
   vertical-align: middle;
@@ -132,10 +133,10 @@ body #windowContainer #popUpWindow #name #locationIcon {
   transform: translateY(-10%);
 }
 body #windowContainer #popUpWindow iframe {
-  border: solid 3px #333333;
+  border: solid clamp(2px, 0.3vw, 3px) #333333;
   border-radius: 15px;
   aspect-ratio: 1 / 1;
-  width: clamp(315px, 80vw, 70vh);
+  width: clamp(min(315px, 80vw), 80vw, 70vh);
 }
 body #windowContainer #popUpWindow #crossIcon {
   position: absolute;
