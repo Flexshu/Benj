@@ -4,8 +4,6 @@ const menu = document.getElementById("menu");
 const shade = document.getElementById("shade");
 let menuIsOpened = false;
 
-menu.style.visibility = "hidden";
-
 function updateMenuPos(){
     if (!menuIsOpened){
         menu.style.top = "-" + menu.offsetHeight + "px";
