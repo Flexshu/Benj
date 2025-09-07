@@ -50,24 +50,28 @@ def establishConnection():
     connection.autocommit = True
     return connection
 
-def defineMasterId(name: str) -> int:
+def defineMasterId(name: str) -> int | None:
     match name:
         case "Вадим Толстік":
             return 1
-        case "Єлизавета Анохіна":
+        case "Наталія Полтавченко":
             return 2
-        case "Анна Кононенко":
+        case "Інна Сіра":
             return 3
-        case "Арміне Караханян":
+        case "Єлизавета Анохіна":
             return 4
-        case "Дарʼя Куриленко":
+        case "Анна Кононенко":
             return 5
-        case "Аврора Котляр":
+        case "Інна Нємцева":
             return 6
-        case "Єлизавета Теплинська":
-            return 7
         case "Ірина Білоусова":
+            return 7
+        case "Ангеліна Дехніч":
             return 8
+        case "Арміне Караханян":
+            return 9
+        case "Олександра Татаренко":
+            return 10
         case _:
             return None
 
