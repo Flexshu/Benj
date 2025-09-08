@@ -78,19 +78,19 @@ body{
                 width: 100%;
                 background-color: white;
                 padding: 5px 8px;
-                border: solid 2px white;
+                border: solid clamp(1px, 0.2vw, 2px) white;
                 border-radius: 0;
                 box-sizing: border-box;
                 color: @gray3;
                 caret-color: @gray3;
                 font-family: "KyivType", serif;
-                font-size: clamp(15px, 2.5vw, 24px);
+                font-size: clamp(16px, 2.5vw, 24px);
                 cursor: pointer;
                 opacity: 1;
                 transition: box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
                 &:focus{
                     outline: none;
-                    border: solid 2px @gray3;
+                    border: solid clamp(1px, 0.2vw, 2px) @gray3;
                 }
                 &::placeholder{
                     color: @gray2;
@@ -104,7 +104,7 @@ body{
                 }
             }
             .wrong, .wrapper .wrong{
-                border: solid 2px @red;
+                border: solid clamp(1px, 0.2vw, 2px) @red;
                 color: @red;
                 &::placeholder{
                     color: @red;

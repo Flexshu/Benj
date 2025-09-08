@@ -1,6 +1,7 @@
-import psycopg2 as p
+import supabase as s
 import flask as f
 # import flask_limiter as fl
+import datetime as dt
 import os
 
 flask: f.Flask = f.Flask(__name__)
@@ -39,46 +40,31 @@ def aboutUs():
 def reviews():
     return f.render_template("reviews.html")
 
-def establishConnection():
-    connection: p.connection = p.connect(
-        user = "postgres.yiixwhdstrtfxihpcjvz",
-        password = "Free3000Delahoya202",
-        host = "aws-0-eu-north-1.pooler.supabase.com",
-        dbname = "postgres",
-        sslmode = "require"
-    )
-    connection.autocommit = True
-    return connection
+def establishConnection() -> s.Client:
+    url: str = "https://yiixwhdstrtfxihpcjvz.supabase.co"
+    key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpaXh3aGRzdHJ0ZnhpaHBjanZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ5MjA2NTksImV4cCI6MjA3MDQ5NjY1OX0.Kkz6HIigeqKhLuEpBAS7CM36fBuFOmcZzuOy-VsOT0w"
+    client: s.Client = s.create_client(url, key)
+    return client
 
 def defineMasterId(name: str) -> int | None:
-    match name:
-        case "Вадим Толстік":
-            return 1
-        case "Наталія Полтавченко":
-            return 2
-        case "Інна Сіра":
-            return 3
-        case "Єлизавета Анохіна":
-            return 4
-        case "Анна Кононенко":
-            return 5
-        case "Інна Нємцева":
-            return 6
-        case "Ірина Білоусова":
-            return 7
-        case "Ангеліна Дехніч":
-            return 8
-        case "Арміне Караханян":
-            return 9
-        case "Олександра Татаренко":
-            return 10
-        case _:
-            return None
+    masterIds : dict[str, int] = {
+        "Вадим Толстік": 1,
+        "Наталія Полтавченко": 2,
+        "Інна Сіра": 3,
+        "Єлизавета Анохіна": 4,
+        "Анна Кононенко": 5,
+        "Інна Нємцева": 6,
+        "Ірина Білоусова": 7,
+        "Ангеліна Дехніч": 8,
+        "Арміне Караханян": 9,
+        "Олександра Татаренко": 10
+    }
+    return masterIds.get(name)
 
 @flask.route("/submit", methods = ["POST"])
 #@limiter.limit("5 per hour")
 def submit():
-    connection = establishConnection()
+    client: s.Client = establishConnection()
 
     firstName: str = f.request.form.get("firstName")
     lastName: str = f.request.form.get("lastName")
@@ -92,25 +78,32 @@ def submit():
 
     masterId: int = defineMasterId(master)
 
-    with connection.cursor() as cursor:
-        cursor.execute("INSERT INTO appointments VALUES (DEFAULT, %s, %s, %s, %s, %s, %s, %s, %s, %s, DEFAULT);", (firstName, lastName, phoneNumber, serviceCategory, serviceType, masterId, date, time, comment))
-
-    connection.close()
+    client.table("appointments").insert({
+        "first_name": firstName,
+        "last_name": lastName,
+        "phone_number": phoneNumber,
+        "service_category": serviceCategory,
+        "service_type": serviceType,
+        "master_id": masterId,
+        "a_date": date,
+        "a_time": time,
+        "comment": comment
+    }).execute()
 
     return f.render_template("book.html")
 
+
+def transformAppointments(appointments: list) -> list:
+    return [(dt.datetime.strptime(row["a_time"], "%H:%M:%S").time().hour, row["master_id"], row["service_category"]) for row in appointments]
+
 def getAppointments(date: str) -> list:
-    connection: p.connection = establishConnection()
-    appointments: list = []
+    client: s.Client = establishConnection()
 
-    with connection.cursor() as cursor:
-        cursor.execute("SELECT a_time, master_id, service_category FROM appointments WHERE a_date = %s;", (date,))
-        appointments = cursor.fetchall()
+    response: s.ClientResponse = client.table("appointments").select("a_time, master_id, service_category").eq("a_date", date).execute()
+    appointments: list = response.data
 
-    connection.close()
-
-    transformedAppointments: list = [(row[0].hour, row[1], row[2]) for row in appointments]
-    return transformedAppointments
+    appointments = transformAppointments(appointments)
+    return appointments
 
 @flask.route("/sendHours", methods = ["POST"])
 #@limiter.limit("10 per minute")

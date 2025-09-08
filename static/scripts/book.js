@@ -163,18 +163,13 @@ async function getAppointments() {
 }
 
 async function hourIsFree(hour) {
-    if (hour === 9) {
-        if (appointmentsPerHour[hour] + appointmentsPerHour[hour + serviceDuration[serviceCategoryInput.value]] >= masters[serviceCategoryInput.value].length) {
+    if (serviceDuration[serviceCategoryInput.value] === 0) {
+        if (appointmentsPerHour[hour] >= masters[serviceCategoryInput.value].length) {
             return false;
         }
     }
-    else if (hour === 20) {
-        if (appointmentsPerHour[hour] + appointmentsPerHour[hour - serviceDuration[serviceCategoryInput.value]] >= masters[serviceCategoryInput.value].length) {
-            return false;
-        }
-    }
-    else {
-        if (appointmentsPerHour[hour] + appointmentsPerHour[hour - serviceDuration[serviceCategoryInput.value]] + appointmentsPerHour[hour + serviceDuration[serviceCategoryInput.value]] >= masters[serviceCategoryInput.value].length) {
+    else if (serviceDuration[serviceCategoryInput.value] === 1) {
+        if (appointmentsPerHour[hour] + (appointmentsPerHour[hour - 1] || 0) + (appointmentsPerHour[hour + 1] || 0) >= masters[serviceCategoryInput.value].length) {
             return false;
         }
     }
@@ -239,6 +234,26 @@ function checkInputs() {
     return checker;
 }
 
+function resetVars() {
+     firstNameInput.value = "";
+     lastNameInput.value = "";
+     phoneNumberInput.value = "";
+     serviceCategoryInput.value = "";
+     serviceTypeInput.value = "";
+     masterInput.value = "";
+     dateInput.value = dateInput.min;
+     timeInput.value = "";
+     commentInput.value = "";
+     serviceTypeInput.classList.add("unavailable");
+     masterInput.classList.add("unavailable");
+     dateInput.classList.add("unavailable");
+     timeInput.classList.add("unavailable");
+     serviceTypeInput.disabled = true;
+     masterInput.disabled = true;
+     dateInput.disabled = true;
+     timeInput.disabled = true;
+}
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -256,26 +271,7 @@ form.addEventListener("submit", async (e) => {
         alert("Ви зробили занадто багато запитів. Спробуйте пізніше.");
     }
     else if (response.ok) {
-        firstNameInput.value = "";
-        lastNameInput.value = "";
-        phoneNumberInput.value = "";
-        serviceCategoryInput.value = "";
-        serviceTypeInput.value = "";
-        masterInput.value = "";
-        dateInput.value = dateInput.min;
-        timeInput.value = "";
-        commentInput.value = "";
-        serviceTypeInput.classList.add("unavailable");
-        masterInput.classList.add("unavailable");
-        dateInput.classList.add("unavailable");
-        timeInput.classList.add("unavailable");
-        serviceTypeInput.disabled = true;
-        masterInput.disabled = true;
-        dateInput.disabled = true;
-        timeInput.disabled = true;
-        appointments = await getAppointments();
-        appointmentHours = appointments.map(appointments => appointments[0]);
-        appointmentMasters = appointments.map(appointments => appointments[1]);
+        resetVars();
         alert("Ваша заява успішно відправлена! Ми скоро зв'яжемося з Вами.");
     }
     else {

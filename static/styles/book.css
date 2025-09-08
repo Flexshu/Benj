@@ -91,13 +91,13 @@ body main form .wrapper select {
   width: 100%;
   background-color: white;
   padding: 5px 8px;
-  border: solid 2px white;
+  border: solid clamp(1px, 0.2vw, 2px) white;
   border-radius: 0;
   box-sizing: border-box;
   color: #333333;
   caret-color: #333333;
   font-family: "KyivType", serif;
-  font-size: clamp(15px, 2.5vw, 24px);
+  font-size: clamp(16px, 2.5vw, 24px);
   cursor: pointer;
   opacity: 1;
   transition: box-shadow 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
@@ -106,7 +106,7 @@ body main form input:focus,
 body main form textarea:focus,
 body main form .wrapper select:focus {
   outline: none;
-  border: solid 2px #333333;
+  border: solid clamp(1px, 0.2vw, 2px) #333333;
 }
 body main form input::placeholder,
 body main form textarea::placeholder,
@@ -124,7 +124,7 @@ body main form .unavailable ~ svg path {
 }
 body main form .wrong,
 body main form .wrapper .wrong {
-  border: solid 2px #B34747;
+  border: solid clamp(1px, 0.2vw, 2px) #B34747;
   color: #B34747;
 }
 body main form .wrong::placeholder,
