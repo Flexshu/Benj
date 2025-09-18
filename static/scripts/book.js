@@ -96,6 +96,9 @@ function defineInput(serviceCategory, input, array) {
         inputType = "майстра";
     }
     input.innerHTML = "<option value=\"\" disabled selected hidden>Оберіть " + inputType + "</option>";
+    if (input === masterInput) {
+        input.innerHTML += "<option value=\"\">Будь-який</option>";
+    }
     array[serviceCategory].forEach(service => createOption(service, service, input));
 }
 
