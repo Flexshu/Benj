@@ -57,7 +57,7 @@ body main .wrapper .container {
   gap: 5px;
   align-items: center;
   width: max(22.5vw, 150px);
-  font-size: max(2.25vw, 15px);
+  font-size: max(2.25vw, 23px);
 }
 body main .wrapper .container img {
   width: 100%;
