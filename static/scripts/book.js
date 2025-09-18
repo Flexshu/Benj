@@ -13,6 +13,59 @@ const button = document.getElementById("submit");
 
 const inputArray = [firstNameInput, lastNameInput, phoneNumberInput, serviceCategoryInput, serviceTypeInput, dateInput, timeInput];
 
+//defining constants
+const masterIds = {
+    0: "none",
+    1: "Вадим Толстік",
+    2: "Наталія Полтавченко",
+    3: "Інна Сіра",
+    4: "Єлизавета Анохіна",
+    5: "Анна Кононенко",
+    6: "Інна Нємцева",
+    7: "Ірина Білоусова",
+    8: "Ангеліна Дехніч",
+    9: "Арміне Караханян",
+    10: "Олександра Татаренко"
+};
+const serviceDuration = {
+    massage: 0,
+    hairCut: 0,
+    hairDressing: 0,
+    hairDyeing: 0,
+    manicur: 1,
+    pedicur: 1,
+    cosmetics: 0,
+    eyebrows: 0,
+    depilation: 0
+};
+const services = {
+    massage: ["Загальний масаж", "Заспокійливий/бадьорливий масаж", "Лікувальний масаж", "Лікувальний масаж однієї зони", "Реабілітація після травм", "Мануальна терапія", "Лікувальний масаж і мануальна терапія", "Ручний антицилюлітний масаж", "Лікувальний масаж за допомогою вакуумної банки", "Антицилюлітний масаж за допомогою вакуумної банки", "Лікувальний масаж при порушенні постави", "Лімфодринажний масаж однієї зони"],
+    hairCut: ["Борода", "Соціальна чоловіча стрижка", "Соціальна жіноча стрижка", "Жіноча стрижка", "Чоловіча стрижка", "Стрижка під машинку"],
+    hairDressing: ["Локони до плеча", "Локони до лопаток", "Локони до поясу", "Густина", "Зачіски/хвіст", "Холодне відновлювання від довжини", "Пілінг голови", "Мийка/сушка волосся", "Мийка/сушка волосся з укладанням на Браш/Дайсон"],
+    hairDyeing: ["Фарбування в один тон", "Фарбування в один тон (довге волосся)", "Фарбування коренів", "Мелірування", "Airtouch (Аїртач)", "Total blond (Повне блондування)"],
+    manicur: ["Манікюр і покриття", "Зміцнення гелем", "Нарощування 1-2 довжини", "Ремонт, нарощування (1 ніготь)", "Гігієнічний манікюр", "Дизайн 1 нігтя", "Дизайн усіх нігтів", "Френч", "Обʼємні фігурки"],
+    pedicur: ["Повний педикюр і покриття", "Покриття", "Гігієнічний педикюр"],
+    cosmetics: ["Комбінована чистка обличчя", "Чистка обличчя з пілінгом", "Карбоксітерапія", "Пілінг", "Класичний масаж обличчя", "Масаж обличчя Кобідо"],
+    eyebrows: ["Ламінування брів", "Ламінування вій", "Фарбування брів", "Фарбування вій", "Моделювання брів", "Корекція та фарбування брів"],
+    depilation: ["Пахви", "Глибоке бікіні", "Класичне бікіні", "Ноги повністю", "Ноги до колін", "Руки повністю", "Руки до ліктів", "Вусики", "Підборіддя", "Сідниці"]
+};
+const masters = {
+    massage: ["Вадим Толстік", "Наталія Полтавченко"],
+    hairCut: ["Інна Сіра", "Єлизавета Анохіна"],
+    hairDressing: ["Анна Кононенко"],
+    hairDyeing: ["Інна Сіра", "Інна Нємцева"],
+    manicur: ["Ірина Білоусова"],
+    pedicur: ["Ірина Білоусова"],
+    cosmetics: ["Ангеліна Дехніч"],
+    eyebrows: ["Арміне Караханян"],
+    depilation: ["Олександра Татаренко"]
+};
+
+let appointments = [];
+let appointmentHours = [];
+let appointmentMasters = [];
+let appointmentServiceCategories = [];
+
 //scaling commentInput
 commentInput.addEventListener("input", () => {
     commentInput.style.height = "auto";
@@ -27,30 +80,6 @@ inputArray.forEach(input => {
 });
 
 //unlocking inputs depending on serviceCategory
-const services = {
-    massage: ["Загальний масаж", "Заспокійливий/бадьорливий масаж", "Лікувальний масаж", "Лікувальний масаж однієї зони", "Реабілітація після травм", "Мануальна терапія", "Лікувальний масаж і мануальна терапія", "Ручний антицилюлітний масаж", "Лікувальний масаж за допомогою вакуумної банки", "Антицилюлітний масаж за допомогою вакуумної банки", "Лікувальний масаж при порушенні постави", "Лімфодринажний масаж однієї зони"],
-    hairCut: ["Борода", "Соціальна чоловіча стрижка", "Соціальна жіноча стрижка", "Жіноча стрижка", "Чоловіча стрижка", "Стрижка під машинку"],
-    hairDressing: ["Локони до плеча", "Локони до лопаток", "Локони до поясу", "Густина", "Зачіски/хвіст", "Холодне відновлювання від довжини", "Пілінг голови", "Мийка/сушка волосся", "Мийка/сушка волосся з укладанням на Браш/Дайсон"],
-    hairDyeing: ["Фарбування в один тон", "Фарбування в один тон (довге волосся)", "Фарбування коренів", "Мелірування", "Airtouch (Аїртач)", "Total blond (Повне блондування)"],
-    manicur: ["Манікюр і покриття", "Зміцнення гелем", "Нарощування 1-2 довжини", "Ремонт, нарощування (1 ніготь)", "Гігієнічний манікюр", "Дизайн 1 нігтя", "Дизайн усіх нігтів", "Френч", "Обʼємні фігурки"],
-    pedicur: ["Повний педикюр і покриття", "Покриття", "Гігієнічний педикюр"],
-    cosmetics: ["Комбінована чистка обличчя", "Чистка обличчя з пілінгом", "Карбоксітерапія", "Пілінг", "Класичний масаж обличчя", "Масаж обличчя Кобідо"],
-    eyebrows: ["Ламінування брів", "Ламінування вій", "Фарбування брів", "Фарбування вій", "Моделювання брів", "Корекція та фарбування брів"],
-    depilation: ["Пахви", "Глибоке бікіні", "Класичне бікіні", "Ноги повністю", "Ноги до колін", "Руки повністю", "Руки до ліктів", "Вусики", "Підборіддя", "Сідниці"]
-};
-
-const masters = {
-    massage: ["Вадим Толстік", "Полтавченко Наталія"],
-    hairCut: ["Інна Сіра", "Єлизавета Анохіна"],
-    hairDressing: ["Анна Кононенко"],
-    hairDyeing: ["Інна Сіра", "Інна Нємцева"],
-    manicur: ["Ірина Білоусова"],
-    pedicur: ["Ірина Білоусова"],
-    cosmetics: ["Ангеліна Дехніч"],
-    eyebrows: ["Арміне Караханян"],
-    depilation: ["Олександра Татаренко"]
-};
-
 function createOption(value, text, input) {
     const option = document.createElement("option");
     option.value = value;
@@ -116,38 +145,6 @@ function defineDateInput() {
 defineDateInput();
 
 //setting timeInput
-let appointments = [];
-let appointmentHours = [];
-let appointmentMasters = [];
-let appointmentServiceCategories = [];
-let appointmentsPerHour = {9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0};
-
-const masterIds = {
-    0: "none",
-    1: "Вадим Толстік",
-    2: "Наталія Полтавченко",
-    3: "Інна Сіра",
-    4: "Єлизавета Анохіна",
-    5: "Анна Кононенко",
-    6: "Інна Нємцева",
-    7: "Ірина Білоусова",
-    8: "Ангеліна Дехніч",
-    9: "Арміне Караханян",
-    10: "Олександра Татаренко"
-};
-
-const serviceDuration = {
-    massage: 0,
-    hairCut: 0,
-    hairDressing: 0,
-    hairDyeing: 0,
-    manicur: 1,
-    pedicur: 1,
-    cosmetics: 0,
-    eyebrows: 0,
-    depilation: 0
-};
-
 async function getAppointments() {
     const response = await fetch("/sendHours", {
         method: "POST",
@@ -163,21 +160,24 @@ async function getAppointments() {
 }
 
 async function hourIsFree(hour) {
-    if (serviceDuration[serviceCategoryInput.value] === 0) {
-        if (appointmentsPerHour[hour] >= masters[serviceCategoryInput.value].length) {
-            return false;
-        }
-    }
-    else if (serviceDuration[serviceCategoryInput.value] === 1) {
-        if (appointmentsPerHour[hour] + (appointmentsPerHour[hour - 1] || 0) + (appointmentsPerHour[hour + 1] || 0) >= masters[serviceCategoryInput.value].length) {
-            return false;
-        }
-    }
-    if (masterInput.value !== "") {
+    let busyMasters = 0;
+    if (masterInput.value === "") {
         for (let i = 0; i < appointmentHours.length; i++) {
-            if (appointmentHours[i] === hour || appointmentHours[i] === hour - serviceDuration[serviceCategoryInput.value] || appointmentHours[i] === hour + serviceDuration[serviceCategoryInput.value]) {
-                if (masterIds[appointmentMasters[i]] === masterInput.value) {
-                    return false;
+            if (masters[serviceCategoryInput.value].includes(masterIds[appointmentMasters[i]])) {
+                if (appointmentHours[i] === hour || (hour > 9 ? appointmentHours[i] === hour - serviceDuration[serviceCategoryInput.value] : false) || (hour < 20 ? appointmentHours[i] === hour + serviceDuration[serviceCategoryInput.value] : false)) {
+                    busyMasters++;
+                }
+            }
+        }
+    }
+    if (busyMasters >= masters[serviceCategoryInput.value].length) {
+        return false;
+    }
+    else if (masterInput.value !== "") {
+        for (let i = 0; i < appointmentHours.length; i++) {
+            if (masterIds[appointmentMasters[i]] === masterInput.value) {
+                if (appointmentHours[i] === hour || (hour > 9 ? appointmentHours[i] === hour - serviceDuration[serviceCategoryInput.value] : false) || (hour < 20 ? appointmentHours[i] === hour + serviceDuration[serviceCategoryInput.value] : false)) {
+                    return false
                 }
             }
         }
@@ -190,14 +190,6 @@ async function calcFreeHours() {
     appointmentHours = appointments.map(a => a[0]);
     appointmentMasters = appointments.map(a => a[1]);
     appointmentServiceCategories = appointments.map(a => a[2]);
-    appointmentsPerHour = {9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0, 19: 0, 20: 0};
-    for (let i = 9; i < 21; i++) {
-        for (let j = 0; j < appointmentHours.length; j++) {
-            if (appointmentHours[j] === i && appointmentServiceCategories[j] === serviceCategoryInput.value) {
-                appointmentsPerHour[i]++;
-            }
-        }
-    }
     let freeHours = [];
     for (let i = 9; i < 21; i++) {
         if (await hourIsFree(i)) {
@@ -234,6 +226,40 @@ function checkInputs() {
     return checker;
 }
 
+function assignMaster() {
+    let freeMasters = masters[serviceCategoryInput.value];
+    let hour = parseInt(timeInput.value.split(":")[0]);
+    for (let i = 0; i < appointmentMasters.length; i++) {
+        if (appointmentServiceCategories[i] === serviceCategoryInput.value) {
+            if (appointmentHours[i] === hour || (hour > 9 ? appointmentHours[i] === hour - serviceDuration[serviceCategoryInput.value] : false) || (hour < 20 ? appointmentHours[i] === hour + serviceDuration[serviceCategoryInput.value] : false)) {
+                freeMasters = freeMasters.filter(m => m !== masterIds[appointmentMasters[i]]);
+            }
+        }
+    }
+
+    let appointmentsNumber = [];
+    for (let i = 0; i < freeMasters.length; i++) {
+        appointmentsNumber[i] = 0;
+    }
+
+    for (let i = 0; i < appointmentsNumber.length; i++) {
+        for (let j = 0; j < appointmentHours.length; j++) {
+            if (freeMasters[i] === masterIds[appointmentMasters[j]]) {
+                appointmentsNumber[i]++;
+            }
+        }
+    }
+
+    let min = 0;
+    for (let i = 1; i < appointmentsNumber.length; i++) {
+        if (appointmentsNumber[i] < appointmentsNumber[min]) {
+            min = i;
+        }
+    }
+
+    return freeMasters[min];
+}
+
 function resetVars() {
      firstNameInput.value = "";
      lastNameInput.value = "";
@@ -263,10 +289,15 @@ form.addEventListener("submit", async (e) => {
     }
 
     const formData = new FormData(form);
+    if (masterInput.value === "") {
+        formData.set("master", assignMaster());
+    }
+
     const response = await fetch("/submit", {
         method: "POST",
         body: formData
     });
+
     if (response.status === 429) {
         alert("Ви зробили занадто багато запитів. Спробуйте пізніше.");
     }
