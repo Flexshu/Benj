@@ -157,7 +157,7 @@ async function getAppointments() {
         return await response.json();
     }
     else {
-        alert("Помилка при зверненні до /sendHours.");
+        alert("Помилка сервера. Спробуйте ще раз.");
         return [];
     }
 }
