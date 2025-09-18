@@ -1,15 +1,10 @@
 import supabase as s
 import flask as f
-# import flask_limiter as fl
 import datetime as dt
 import os
 
 flask: f.Flask = f.Flask(__name__)
 application = flask
-#limiter: fl.Limiter = fl.Limiter(
-    #app = flask,
-    #key_func = lambda: f.request.remote_addr
-#)
 
 @flask.route("/")
 @flask.route("/home")
@@ -62,7 +57,6 @@ def defineMasterId(name: str) -> int | None:
     return masterIds.get(name)
 
 @flask.route("/submit", methods = ["POST"])
-#@limiter.limit("5 per hour")
 def submit():
     client: s.Client = establishConnection()
 
@@ -106,7 +100,6 @@ def getAppointments(date: str) -> list:
     return appointments
 
 @flask.route("/sendHours", methods = ["POST"])
-#@limiter.limit("10 per minute")
 def sendHours():
     date: str = f.request.form.get("date")
     return f.jsonify(getAppointments(date))
