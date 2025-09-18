@@ -35,7 +35,7 @@ body main form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: min(25px, 4vw);
   margin: 15px 0;
 }
 body main form .label {
@@ -54,7 +54,7 @@ body main form .label label {
   font-family: "KyivTypeBold", serif;
   color: #333333;
   font-size: clamp(20px, 4vw, 40px);
-  text-align: right;
+  text-align: center;
   padding: 0 1vw;
 }
 body main form .selectContainer {
@@ -134,9 +134,22 @@ body main .container .heading .stripe {
   position: relative;
   top: 6%;
 }
+body main .container .serviceDuration {
+  height: 5%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .container .serviceDuration h4 {
+  text-align: center;
+  font-family: "Kurale", sans-serif;
+  color: #555555;
+  font-size: clamp(1rem, 2.5em, 1.5rem);
+}
 body main .container .description {
   width: calc(100% - 6vw);
-  height: 90%;
+  height: 85%;
   display: flex;
   align-items: center;
 }
@@ -219,11 +232,15 @@ body main .cut .description {
     margin: 10px 0;
   }
   body main .container .heading {
-    height: max(7.5vh, 7vw);
-    box-sizing: border-box;
+    height: auto;
+    margin-bottom: 0.5vmax;
   }
   body main .container .heading .stripe {
     height: 0.75vw;
+  }
+  body main .container .serviceDuration {
+    height: auto;
+    margin-bottom: 1vmax;
   }
   body main .container .description .priceList .border {
     height: max(0.25vh, 2px);
