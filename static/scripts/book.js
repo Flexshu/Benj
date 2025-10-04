@@ -162,7 +162,7 @@ async function getAppointments() {
     }
 }
 
-async function hourIsFree(hour) {
+function hourIsFree(hour) {
     let busyMasters = 0;
     if (masterInput.value === "") {
         for (let i = 0; i < appointmentHours.length; i++) {
@@ -195,7 +195,7 @@ async function calcFreeHours() {
     appointmentServiceCategories = appointments.map(a => a[2]);
     let freeHours = [];
     for (let i = 9; i < 21; i++) {
-        if (await hourIsFree(i)) {
+        if (hourIsFree(i)) {
             freeHours.push(i + ":00");
         }
     }

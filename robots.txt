@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://benj.com.ua/sitemap.xml

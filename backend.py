@@ -6,6 +6,18 @@ import os
 flask: f.Flask = f.Flask(__name__)
 application = flask
 
+@flask.route("/favicon.ico")
+def favicon():
+    return f.send_from_directory(flask.root_path, "favicon.ico")
+
+@flask.route("/robots.txt")
+def robots():
+    return f.send_from_directory(flask.root_path, "robots.txt")
+
+@flask.route("/sitemap.xml")
+def sitemap():
+    return f.send_from_directory(flask.root_path, "sitemap.xml")
+
 @flask.route("/")
 @flask.route("/home")
 def home():
