@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>Benj</title>
+    <meta name="description" content="Салон краси Benj (Бендж) — сучасна студія краси у Харкові. Масаж, стрижка, фарбування волосся, манікюр, педикюр, косметологічні послуги, брови та вії й депіляція — ми пропонуємо все в найвищій якості.">
+    <title>Товари Benj (Бендж) — салон краси в Харкові</title>
     <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/LogoEtc/icon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/header&footer.css') }}">
@@ -14,7 +15,7 @@
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Benj Icon" id="benjLogo">
+        <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Логотип Бенджа (Benj)" id="benjLogo">
         <a href="home" style="text-decoration: none;"><h1>Головна</h1></a>
         <a href="services" style="text-decoration: none;"><h1>Послуги</h1></a>
         <a href="book" style="text-decoration: none;"><h1>Записатися</h1></a>
@@ -26,7 +27,7 @@
     </header>
     <div id="menu">
         <div class="hiddenImgs">
-            <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Benj Icon" id="hiddenBenjLogo">
+            <img src="{{ url_for('static', filename='img/LogoEtc/BenjLogoClear.png') }}" alt="Логотип Бенджа (Benj)" id="hiddenBenjLogo">
             <svg id="hiddenBurger" width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="34" height="6" fill="#C6B49B"/><rect y="12" width="34" height="6" fill="#C6B49B"/><rect y="24" width="34" height="6" fill="#C6B49B"/></svg>
         </div>
         <a href="home" style="text-decoration: none;"><h1>Головна</h1></a>
@@ -43,25 +44,25 @@
         <h2 class="subheading">Для замовлення товарів зателефонуйте нам</h2>
         <div class="wrapper">
             <div class="container">
-                <img src="{{ url_for('static', filename='img/Photos/product1.png') }}" alt="" onclick="showProduct(0)">
+                <img src="{{ url_for('static', filename='img/Photos/product1.png') }}" alt="Крем для обʼєму, густини та текстури волосся Tigi Small Talk" onclick="showProduct(0)">
                 <h1>Tigi Small Talk</h1>
                 <p>Крем для обʼєму, густини та текстури волосся</p>
                 <h2>450 грн</h2>
             </div>
             <div class="container">
-                <img src="{{ url_for('static', filename='img/Photos/product2.png') }}" alt="" onclick="showProduct(1)">
+                <img src="{{ url_for('static', filename='img/Photos/product2.png') }}" alt="Набір комплексного догляду проти випадіння волосся Hillary Perfect Hair Serenoa" onclick="showProduct(1)">
                 <h1>Hillary Perfect Hair Serenoa</h1>
                 <p>Набір комплексного догляду проти випадіння волосся</p>
                 <h2>2500 грн</h2>
             </div>
             <div class="container">
-                <img src="{{ url_for('static', filename='img/Photos/product3.png') }}" alt="" onclick="showProduct(2)">
+                <img src="{{ url_for('static', filename='img/Photos/product3.png') }}" alt="Чоловічий шампунь для зміцнення волосся Alfaparf Milano" onclick="showProduct(2)">
                 <h1>Чоловічий шампунь Alfaparf Milano</h1>
                 <p>Чоловічий шампунь для зміцнення волосся, не містить сульфатів</p>
                 <h2>750 грн</h2>
             </div>
             <div class="container">
-                <img src="{{ url_for('static', filename='img/Photos/product4.png') }}" alt="" onclick="showProduct(3)">
+                <img src="{{ url_for('static', filename='img/Photos/product4.png') }}" alt="Спрей для тіла з квітковим ароматом Victoria’s Secret Midnight Bloom" onclick="showProduct(3)">
                 <h1>Victoria’s Secret Midnight Bloom</h1>
                 <p>Спрей для тіла з квітковим ароматом</p>
                 <h2>400 грн</h2>
@@ -73,7 +74,7 @@
             <h1 id="name"></h1>
             <svg onclick="closeWindow()" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M47.5632 38.5632L33.0012 24.0012L47.5632 9.43918C47.8422 9.15673 47.9987 8.7757 47.9987 8.37868C47.9987 7.98165 47.8422 7.60062 47.5632 7.31818L40.6842 0.43918C40.4029 0.157973 40.0214 0 39.6237 0C39.2259 0 38.8445 0.157973 38.5632 0.43918L24.0012 15.0012L9.43918 0.43918C9.15789 0.157973 8.77643 0 8.37868 0C7.98093 0 7.59947 0.157973 7.31818 0.43918L0.43918 7.31818C0.157973 7.59947 0 7.98093 0 8.37868C0 8.77643 0.157973 9.15789 0.43918 9.43918L15.0012 24.0012L0.43918 38.5632C0.157973 38.8445 0 39.2259 0 39.6237C0 40.0214 0.157973 40.4029 0.43918 40.6842L7.31818 47.5632C7.59947 47.8444 7.98093 48.0024 8.37868 48.0024C8.77643 48.0024 9.15789 47.8444 9.43918 47.5632L24.0012 33.0012L38.5632 47.5632C38.8445 47.8444 39.2259 48.0024 39.6237 48.0024C40.0214 48.0024 40.4029 47.8444 40.6842 47.5632L47.5632 40.6842C47.8444 40.4029 48.0024 40.0214 48.0024 39.6237C48.0024 39.2259 47.8444 38.8445 47.5632 38.5632Z" fill="#555555"/></svg>
             <div class="info">
-                <img src="" alt="" id="image">
+                <img src="" alt="Товар салону краси Benj (Бендж)" id="image">
                 <div class="description">
                     <p>Виробник: <span id="brand"></span></p>
                     <p>Ціна: <span id="price"></span></p>
