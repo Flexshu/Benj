@@ -288,7 +288,7 @@ body main #three .second #scissors {
     width: 80%;
     font-size: 3vw;
   }
-  body main #three .second img {
+  body main #three .second svg {
     display: none;
   }
 }
