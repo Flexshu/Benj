@@ -30,7 +30,7 @@ body{
                     p, #metro p{
                         font-family: "KyivTypeBold", serif;
                         font-size: 1em;
-                        color: @blue3;
+                        color: @black;
                         text-align: center;
                         svg{
                             vertical-align: middle;
@@ -38,13 +38,13 @@ body{
                             width: auto;
                             transform: translateY(-10%);
                             overflow: visible;
+                            path{
+                                fill: @black;
+                            }
                         }
                     }
                     #adress{
                         font-family: "KyivType", serif;
-                        svg path{
-                            fill: @blue3;
-                        }
                     }
                     #metro{
                         width: 100%;
@@ -54,19 +54,24 @@ body{
                         #metroSecond{
                             font-family: "KyivType", serif;
                             font-size: 0.8em;
-                            color: @blue2;
+                            color: @gray3;
                             margin-top: 10px;
+                            svg{
+                                path{
+                                    fill: @gray3;
+                                }
+                            }
                         }
                     }
                     button{
-                        background-color: @blue1;
-                        border: solid 3px @gray3;
+                        background-color: @pink;
+                        border: solid 3px @black;
                         border-radius: 10px;
                         cursor: pointer;
                         transition: box-shadow 0.25s ease;
                         font-family: "KyivType", serif;
                         font-size: 0.8em;
-                        color: @gray3;
+                        color: @white;
                         padding: 10px 15px;
                         user-select: none;
                         -webkit-user-select: none;
@@ -82,7 +87,7 @@ body{
                 height: 100%;
                 aspect-ratio: 1 / 2;
                 transform: translateX(calc(100% + 1px));
-                background: linear-gradient(to left, @gray1, transparent);
+                background: linear-gradient(to left, @white, transparent);
             }
         }
     }
@@ -100,8 +105,8 @@ body{
         #popUpWindow{
             position: relative;
             z-index: 31;
-            background-color: @gray1;
-            border: solid clamp(3px, 0.5vw, 5px) @gray3;
+            background-color: @white;
+            border: solid clamp(3px, 0.5vw, 5px) @black;
             border-radius: clamp(17px, 3.2vw, 25px);
             padding: min(25px, 3vw);
             padding-top: 15px;
@@ -111,7 +116,7 @@ body{
             align-items: center;
             gap: 15px;
             #name{
-                color: @gray3;
+                color: @black;
                 font-family: "Kurale", serif;
                 font-size: clamp(20px, 3.75vw, 4.75vh);
                 text-align: center;
@@ -120,10 +125,13 @@ body{
                     height: 1.2em;
                     width: auto;
                     transform: translateY(-10%);
+                    path{
+                        fill: @black;
+                    }
                 }
             }
             iframe{
-                border: solid clamp(2px, 0.3vw, 3px) @gray3;
+                border: solid clamp(2px, 0.3vw, 3px) @black;
                 border-radius: 15px;
                 aspect-ratio: 1 /1;
                 width: clamp(min(315px, 80vw), 80vw, 70vh);
@@ -136,6 +144,9 @@ body{
                 height: clamp(20px, 4vmin, 3.5vh);
                 cursor: pointer;
                 transition: filter 0.15s ease;
+                path{
+                    fill: @black;
+                }
                 &:hover{
                     filter: drop-shadow(0 0 1px @shadow);
                 }

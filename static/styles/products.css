@@ -17,7 +17,7 @@ body main {
 }
 body main .heading {
   text-align: center;
-  color: #2C525A;
+  color: #000000;
   font-family: "KyivTypeBold", serif;
   font-size: clamp(30px, 4.5vw, 50px);
   margin: 10px 0 5px 0;
@@ -37,7 +37,7 @@ body main .heading::after {
 }
 body main .subheading {
   text-align: center;
-  color: #555555;
+  color: #333333;
   font-family: "Kurale", serif;
   font-size: clamp(15px, 2.5vw, 25px);
   margin: 5px 0 5px 0;
@@ -62,7 +62,7 @@ body main .wrapper .container {
 body main .wrapper .container img {
   width: 100%;
   border-radius: 15px;
-  border: solid 3px #333333;
+  border: solid 3px #000000;
   box-sizing: border-box;
   cursor: pointer;
   transition: box-shadow 0.15s ease;
@@ -106,15 +106,15 @@ body #windowContainer #popUpWindow {
   position: relative;
   z-index: 31;
   width: 80%;
-  background-color: #CCCCCC;
-  border: solid 5px #333333;
+  background-color: #FFFFFF;
+  border: solid 5px #000000;
   border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 body #windowContainer #popUpWindow #name {
-  color: #333333;
+  color: #000000;
   font-family: "Kurale", serif;
   font-size: clamp(15px, 3.5vw, 40px);
   padding: 10px 0;
@@ -129,6 +129,9 @@ body #windowContainer #popUpWindow svg {
   width: max(2vmax, 20px);
   height: max(2vmax, 20px);
 }
+body #windowContainer #popUpWindow svg path {
+  fill: #000000;
+}
 body #windowContainer #popUpWindow svg:hover {
   filter: drop-shadow(0 0 1px #33333388);
 }
@@ -139,7 +142,7 @@ body #windowContainer #popUpWindow .info {
   gap: 15px;
 }
 body #windowContainer #popUpWindow .info img {
-  border: solid 3px #333333;
+  border: solid 3px #000000;
   border-radius: 15px;
   aspect-ratio: 1 / 1;
   width: calc(max(calc(100vh - 65px), 500px) * 0.8 * 0.75);

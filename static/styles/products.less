@@ -7,7 +7,7 @@ body{
         align-items: center;
         .heading{
             text-align: center;
-            color: @blue3;
+            color: @black;
             font-family: "KyivTypeBold", serif;
             font-size: clamp(30px, 4.5vw, 50px);
             margin: 10px 0 5px 0;
@@ -27,7 +27,7 @@ body{
         }
         .subheading{
             text-align: center;
-            color: @gray2;
+            color: @gray3;
             font-family: "Kurale", serif;
             font-size: clamp(15px, 2.5vw, 25px);
             margin: 5px 0 5px 0;
@@ -50,7 +50,7 @@ body{
                 img{
                     width: 100%;
                     border-radius: 15px;
-                    border: solid 3px @gray3;
+                    border: solid 3px @black;
                     box-sizing: border-box;
                     cursor: pointer;
                     transition: box-shadow 0.15s ease;
@@ -96,14 +96,14 @@ body{
             position: relative;
             z-index: 31;
             width: 80%;
-            background-color: @gray1;
-            border: solid 5px @gray3;
+            background-color: @white;
+            border: solid 5px @black;
             border-radius: 25px;
             display: flex;
             flex-direction: column;
             align-items: center;
             #name{
-                color: @gray3;
+                color: @black;
                 font-family: "Kurale", serif;
                 font-size: clamp(15px, 3.5vw, 40px);
                 padding: 10px 0;
@@ -117,6 +117,9 @@ body{
                 transition: filter 0.15s ease;
                 width: max(2vmax, 20px);
                 height: max(2vmax, 20px);
+                path{
+                    fill: @black;
+                }
                 &:hover{
                     filter: drop-shadow(0 0 1px @shadow);
                 }
@@ -127,7 +130,7 @@ body{
                 display: flex;
                 gap: 15px;
                 img{
-                    border: solid 3px @gray3;
+                    border: solid 3px @black;
                     border-radius: 15px;
                     aspect-ratio: 1 /1;
                     width: calc(@containrHeight * 0.8 * 0.75);

@@ -54,7 +54,7 @@ body{
                     font-family: "KyivType", serif;
                     font-size: 1em;
                     text-align: left;
-                    color: @blue3;
+                    color: @black;
                     margin-bottom: 0.5em;
                     margin-right: 3vw;
                     width: 75%;
@@ -69,14 +69,14 @@ body{
                     font-family: "Kurale", serif;
                     font-size: 0.4em;
                     text-align: right;
-                    color: @blue2;
+                    color: @black;
                     margin-left: 3vw;
                     width: 75%;
                 }
             }
             #oneGradient{
                 transform: translateX(calc(-100% - 1px));
-                background: linear-gradient(to right, @gray1, transparent);
+                background: linear-gradient(to right, @white, transparent);
             }
         }
         #two{
@@ -101,7 +101,7 @@ body{
                     font-family: "KyivType", serif;
                     font-size: 0.75em;
                     text-align: center;
-                    color: @blue3;
+                    color: @black;
                     margin-bottom: 0.5em;
                     width: 85%;
                     line-height: 150%;
@@ -115,8 +115,8 @@ body{
                     a{
                         .button{
                             padding: 0.25em 0.325em;
-                            background-color: @blue1;
-                            outline: solid 0.175rem @gray3;
+                            background-color: @pink;
+                            outline: solid 0.175rem @black;
                             transition: box-shadow 0.15s ease;
                             border-radius: 10px;
                             display: flex;
@@ -124,7 +124,7 @@ body{
                                 box-shadow: 0 0 3px 3px @shadow;
                             }
                             span{
-                                color: @gray3;
+                                color: @white;
                                 font-family: "KyivType", serif;
                                 font-size: max(2vw, 20px);
                             }
@@ -134,7 +134,7 @@ body{
             }
             #twoGradient{
                 transform: translateX(calc(100% + 1px));
-                background: linear-gradient(to left, @gray1, transparent);
+                background: linear-gradient(to left, @white, transparent);
             }
         }
         #three{
@@ -164,7 +164,7 @@ body{
                     font-family: "KyivType", serif;
                     font-size: 0.75em;
                     text-align: left;
-                    color: @blue3;
+                    color: @black;
                     margin-bottom: 0.5em;
                     margin-right: 3vw;
                     width: 75%;
@@ -174,7 +174,7 @@ body{
                     font-family: "KyivType", serif;
                     font-size: 0.6em;
                     text-align: right;
-                    color: @blue3;
+                    color: @black;
                     margin-left: 3vw;
                     width: 75%;
                     #span3{
@@ -184,9 +184,13 @@ body{
                         font-family: "KyivTypeBolder", serif;
                     }
                 }
-                img{
+                svg{
                     position: absolute;
                     height: max(10vh, 55px);
+                    opacity: 0.5;
+                    path{
+                        fill: @black;
+                    }
                 }
                 #bottle{
                     right: 1.5em;
@@ -195,7 +199,6 @@ body{
                 #scissors{
                     left: 1.5em;
                     bottom: 1.25em;
-                    opacity: 0.5;
                 }
             }
         }

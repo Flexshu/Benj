@@ -64,7 +64,7 @@ body main #one .second h1 {
   font-family: "KyivType", serif;
   font-size: 1em;
   text-align: left;
-  color: #2C525A;
+  color: #000000;
   margin-bottom: 0.5em;
   margin-right: 3vw;
   width: 75%;
@@ -79,13 +79,13 @@ body main #one .second p {
   font-family: "Kurale", serif;
   font-size: 0.4em;
   text-align: right;
-  color: #4A7A82;
+  color: #000000;
   margin-left: 3vw;
   width: 75%;
 }
 body main #one #oneGradient {
   transform: translateX(calc(-100% - 1px));
-  background: linear-gradient(to right, #CCCCCC, transparent);
+  background: linear-gradient(to right, #FFFFFF, transparent);
 }
 body main #two .first {
   height: 100%;
@@ -109,7 +109,7 @@ body main #two .second h1 {
   font-family: "KyivType", serif;
   font-size: 0.75em;
   text-align: center;
-  color: #2C525A;
+  color: #000000;
   margin-bottom: 0.5em;
   width: 85%;
   line-height: 150%;
@@ -123,8 +123,8 @@ body main #two .second .buttonsContainer {
 }
 body main #two .second .buttonsContainer a .button {
   padding: 0.25em 0.325em;
-  background-color: #A3BFC5;
-  outline: solid 0.175rem #333333;
+  background-color: #e30566;
+  outline: solid 0.175rem #000000;
   transition: box-shadow 0.15s ease;
   border-radius: 10px;
   display: flex;
@@ -133,13 +133,13 @@ body main #two .second .buttonsContainer a .button:hover {
   box-shadow: 0 0 3px 3px #33333388;
 }
 body main #two .second .buttonsContainer a .button span {
-  color: #333333;
+  color: #FFFFFF;
   font-family: "KyivType", serif;
   font-size: max(2vw, 20px);
 }
 body main #two #twoGradient {
   transform: translateX(calc(100% + 1px));
-  background: linear-gradient(to left, #CCCCCC, transparent);
+  background: linear-gradient(to left, #FFFFFF, transparent);
 }
 body main #three {
   flex-direction: row-reverse;
@@ -170,7 +170,7 @@ body main #three .second h1 {
   font-family: "KyivType", serif;
   font-size: 0.75em;
   text-align: left;
-  color: #2C525A;
+  color: #000000;
   margin-bottom: 0.5em;
   margin-right: 3vw;
   width: 75%;
@@ -180,7 +180,7 @@ body main #three .second h2 {
   font-family: "KyivType", serif;
   font-size: 0.6em;
   text-align: right;
-  color: #2C525A;
+  color: #000000;
   margin-left: 3vw;
   width: 75%;
 }
@@ -190,9 +190,13 @@ body main #three .second h2 #span3 {
 body main #three .second h2 #span4 {
   font-family: "KyivTypeBolder", serif;
 }
-body main #three .second img {
+body main #three .second svg {
   position: absolute;
   height: max(10vh, 55px);
+  opacity: 0.5;
+}
+body main #three .second svg path {
+  fill: #000000;
 }
 body main #three .second #bottle {
   right: 1.5em;
@@ -201,7 +205,6 @@ body main #three .second #bottle {
 body main #three .second #scissors {
   left: 1.5em;
   bottom: 1.25em;
-  opacity: 0.5;
 }
 @media (max-width: 1000px) {
   body main .container {

@@ -23,12 +23,18 @@ body main a #scrollUp {
   z-index: 18;
   width: 50px;
   height: 50px;
-  filter: drop-shadow(0 0 3px #333333);
+  filter: drop-shadow(0 0 3px #33333388);
   opacity: 0;
   transition: filter 0.15s ease, opacity 0.25s ease;
 }
+body main a #scrollUp circle {
+  fill: #e30566;
+}
+body main a #scrollUp path {
+  fill: #FFFFFF;
+}
 body main a #scrollUp:hover {
-  filter: drop-shadow(0 0 5px #333333);
+  filter: drop-shadow(0 0 5px #33333388);
 }
 body main form {
   display: flex;
@@ -46,13 +52,13 @@ body main form .label {
 body main form .label .stripe {
   flex-grow: 1;
   height: 5px;
-  background-color: #333333;
+  background-color: #000000;
   position: relative;
   top: 3px;
 }
 body main form .label label {
   font-family: "KyivTypeBold", serif;
-  color: #333333;
+  color: #000000;
   font-size: clamp(20px, 4vw, 40px);
   text-align: center;
   padding: 0 1vw;
@@ -66,18 +72,17 @@ body main form .selectContainer {
 body main form .selectContainer select {
   cursor: pointer;
   appearance: none;
-  background-color: #A3BFC5;
-  border: solid 2px #333333;
+  background-color: #e30566;
+  border: solid 2px #000000;
   border-radius: 5px;
   height: 100%;
   padding: 0 30px 0 5px;
-  color: #333333;
+  color: #FFFFFF;
   font-family: "KyivType", serif;
   font-size: clamp(15px, 2.5vw, 25px);
   transition: box-shadow 0.15s ease;
 }
 body main form .selectContainer select:hover {
-  border: solid 2px #333333;
   box-shadow: 0 0 1px 1px #33333388;
 }
 body main form .selectContainer select:focus {
@@ -92,13 +97,16 @@ body main form .selectContainer svg {
   top: 40%;
   pointer-events: none;
 }
+body main form .selectContainer svg path {
+  fill: #FFFFFF;
+}
 body main form button {
   appearance: none;
-  background-color: #A3BFC5;
-  border: solid 2px #333333;
+  background-color: #e30566;
+  border: solid 2px #000000;
   border-radius: 5px;
   padding: 5px 15px 5px 15px;
-  color: #333333;
+  color: #FFFFFF;
   font-family: "KyivType", serif;
   font-size: clamp(15px, 2.5vw, 25px);
   cursor: pointer;
@@ -125,12 +133,12 @@ body main .container .heading h1 {
   font-family: "KyivTypeBolder", serif;
   font-size: clamp(1rem, 5em, 3rem);
   padding: 0 1.75vw;
-  color: #333333;
+  color: #000000;
 }
 body main .container .heading .stripe {
   flex-grow: 1;
   height: 10%;
-  background-color: #333333;
+  background-color: #000000;
   position: relative;
   top: 6%;
 }
@@ -144,7 +152,7 @@ body main .container .serviceDuration {
 body main .container .serviceDuration h4 {
   text-align: center;
   font-family: "Kurale", sans-serif;
-  color: #555555;
+  color: #333333;
   font-size: clamp(1rem, 2.5em, 1.5rem);
 }
 body main .container .description {
@@ -156,7 +164,7 @@ body main .container .description {
 body main .container .description img {
   max-height: 90%;
   max-width: min(50vw, 550px);
-  filter: drop-shadow(8px 8px 8px #333333);
+  filter: drop-shadow(8px 8px 8px #33333388);
   margin-right: 3vw;
 }
 body main .container .description .priceList {
@@ -171,7 +179,7 @@ body main .container .description .priceList {
 body main .container .description .priceList .border {
   width: 100%;
   height: 0.5%;
-  background-color: #55555536;
+  background-color: #555555;
 }
 body main .container .description .priceList .service {
   width: 100%;
@@ -179,7 +187,7 @@ body main .container .description .priceList .service {
   align-items: center;
 }
 body main .container .description .priceList .service h2 {
-  color: #555555;
+  color: #333333;
   font-size: 0.5em;
   font-family: "KyivType", serif;
   line-height: 1.5em;
@@ -193,8 +201,8 @@ body main .container .description .priceList .service .price {
 }
 body main .container .description .priceList a .button {
   padding: 0.25em 0.325em;
-  background-color: #A3BFC5;
-  outline: solid 0.175rem #333333;
+  background-color: #e30566;
+  outline: solid 0.175rem #000000;
   transition: box-shadow 0.15s ease;
   border-radius: 10px;
   display: flex;
@@ -203,7 +211,7 @@ body main .container .description .priceList a .button:hover {
   box-shadow: 0 0 3px 3px #33333388;
 }
 body main .container .description .priceList a .button span {
-  color: #333333;
+  color: #FFFFFF;
   font-family: "KyivType", serif;
   font-size: max(2vw, 20px);
 }

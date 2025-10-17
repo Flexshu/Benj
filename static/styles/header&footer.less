@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: @beige1;
+    background-color: @black;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@ body{
         top: 0;
         position: sticky;
         z-index: 20;
-        background-color: @beige1;
+        background-color: @black;
         width: 100%;
         height: @headerHeight;
         display: flex;
@@ -33,32 +33,32 @@ body{
             display: none;
             width: auto;
             overflow: visible;
-        }
-        #burger:hover{
             cursor: pointer;
+            rect{
+                fill: @pink;
+            }
         }
         h1{
             font-size: 23px;
             padding: 1em 0.4em;
-            color: @beige3;
+            color: @white;
             font-family: 'Kurale', serif;
             font-weight: 100;
             box-shadow: none;
             transition: box-shadow 0.15s ease;
             &:hover{
-                box-shadow: 0 1px 3px 2px #bba993c0;
+                box-shadow: 0 1px 3px 2px @pink;
             }
         }
         #currentPage{
-            color: @beige1;
-            background-color: @beige3;
+            background-color: @pink;
         }
     }
     #menu{
         position: fixed;
         z-index: 21;
         width: 100%;
-        background-color: @beige1;
+        background-color: @black;
         padding-bottom: 5px;
         overflow-y: auto;
         max-height: 100vh;
@@ -84,26 +84,26 @@ body{
                 margin-right: 10px;
                 width: auto;
                 overflow: visible;
-                &:hover{
-                    cursor: pointer;
+                cursor: pointer;
+                rect{
+                    fill: @pink;
                 }
             }
         }
         h1{
             font-size: 23px;
             padding: 0.4em 1em;
-            color: @beige3;
+            color: @white;
             font-family: 'Kurale', serif;
             font-weight: 100;
             box-shadow: none;
             transition: box-shadow 0.15s ease;
             &:hover{
-                box-shadow: 0 1px 3px 2px @shadow-beige;
+                box-shadow: 0 1px 3px 2px @pink;
             }
         }
         #hiddenCurrentPage{
-            color: @beige1;
-            background-color: @beige3;
+            background-color: @pink;
         }
     }
     #shade{
@@ -118,12 +118,12 @@ body{
     }
     main{
         flex: 1;
-        background-color: @gray1;
+        background-color: @white;
     }
     footer{
         width: 100%;
         height: auto;
-        background-color: @beige1;
+        background-color: @black;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -139,13 +139,13 @@ body{
             h1{
                 font-family: 'KyivType', serif;
                 font-size: clamp(0.85em, 2vw, 1.5em);
-                color: @gray3;
+                color: @white;
                 padding: 0.2em 0;
             }
             p{
                 font-family: 'Kurale', serif;
                 font-size: clamp(0.75em, 1.85vw, 1.35em);
-                color: @gray2;
+                color: @white;
                 padding: 0.1em 0;
                 svg{
                     height: 1.15em;
@@ -153,6 +153,9 @@ body{
                     vertical-align: middle;
                     overflow: visible;
                     transform: translateY(-10%);
+                    path{
+                        fill: @white;
+                    }
                 }
             }
             .pShort{

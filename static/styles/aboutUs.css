@@ -48,13 +48,13 @@ body main .container .second .marginedSecond .citate {
 }
 body main .container .second .marginedSecond .citate .title {
   font-size: 1em;
-  font-family: "KyivType", serif;
-  color: #333333;
+  font-family: "KyivTypeBold", serif;
+  color: #000000;
 }
 body main .container .second .marginedSecond .citate .text {
   font-size: 0.6em;
   font-family: "Kurale", serif;
-  color: #555555;
+  color: #333333;
 }
 body main .container .second .marginedSecond .right {
   align-self: flex-end;
@@ -69,7 +69,7 @@ body main .container .second .marginedSecond .center {
   width: 80%;
   font-size: 1.2em;
   font-family: "KyivTypeBold", serif;
-  color: #333333;
+  color: #000000;
 }
 body main .container .gradient {
   position: absolute;
@@ -77,7 +77,7 @@ body main .container .gradient {
   height: 100%;
   aspect-ratio: 1 / 2;
   transform: translateX(calc(-100% - 1px));
-  background: linear-gradient(to right, #CCCCCC, transparent);
+  background: linear-gradient(to right, #FFFFFF, transparent);
 }
 body main .heading {
   width: 94vw;
@@ -88,13 +88,13 @@ body main .heading {
 body main .heading .stripe {
   flex-grow: 1;
   height: 5px;
-  background-color: #333333;
+  background-color: #000000;
   position: relative;
   top: 3px;
 }
 body main .heading .title {
   font-family: "KyivTypeBolder", serif;
-  color: #333333;
+  color: #000000;
   font-size: clamp(20px, 4vw, 40px);
   text-align: right;
   padding: 0 1vw;
@@ -115,7 +115,7 @@ body main .wrapper .card {
   gap: 10px;
   padding: clamp(10px, 2.5vw, 15px);
   border-radius: clamp(13px, 3vw, 20px);
-  border: solid clamp(2px, 0.5vw, 4px) #333333;
+  border: solid clamp(2px, 0.5vw, 4px) #000000;
   transition: box-shadow 0.25s ease;
   font-size: clamp(15px, 1.5vw, 30px);
   width: calc(max(200px, 30vw) * 0.9);
@@ -124,27 +124,27 @@ body main .wrapper .card img {
   width: 100%;
   height: calc(max(200px, 30vw) * 0.9);
   border-radius: 15px;
-  border: solid clamp(1.5px, 0.35vw, 3px) #333333;
+  border: solid clamp(1.5px, 0.35vw, 3px) #000000;
 }
 body main .wrapper .card h1 {
   width: 100%;
   font-size: 1em;
   font-family: "KyivTypeBold", serif;
-  color: #333333;
+  color: #000000;
   text-align: center;
 }
 body main .wrapper .card h2 {
   width: 100%;
   font-size: 0.8em;
   font-family: "KyivType", serif;
-  color: #333333;
+  color: #000000;
   text-align: center;
 }
 body main .wrapper .card p {
   width: 100%;
   font-size: 0.6em;
   font-family: "Kurale", serif;
-  color: #555555;
+  color: #333333;
 }
 body main .wrapper .card:hover {
   box-shadow: 0 0 3px 2px #33333388;

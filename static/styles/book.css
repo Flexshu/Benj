@@ -17,7 +17,7 @@ body main {
 }
 body main h1 {
   text-align: center;
-  color: #2C525A;
+  color: #000000;
   font-family: "KyivTypeBold", serif;
   font-size: clamp(30px, 4.5vw, 50px);
   margin: 10px 0;
@@ -37,7 +37,7 @@ body main h1::after {
 }
 body main h3 {
   text-align: center;
-  color: #555555;
+  color: #333333;
   font-family: "Kurale", serif;
   font-size: clamp(15px, 2.5vw, 25px);
   margin: 5px 0 5px 0;
@@ -45,9 +45,9 @@ body main h3 {
 }
 body main form {
   width: min(85vw, 750px);
-  background-color: #4A7A82;
+  background-color: #e30566;
   border-radius: clamp(13px, 3vw, 20px);
-  border: solid clamp(3px, 0.5vw, 5px) #2C525A;
+  border: solid clamp(3px, 0.5vw, 5px) #000000;
   padding: 5px 10px;
   margin: 10px 0 20px 0;
   display: flex;
@@ -55,7 +55,7 @@ body main form {
   gap: min(10px, 1.2vw);
 }
 body main form h2 {
-  color: white;
+  color: #FFFFFF;
   font-family: "KyivTypeBold", serif;
   font-size: clamp(25px, 3.5vw, 35px);
   text-shadow: 1px 1px 3px #33333388;
@@ -89,9 +89,9 @@ body main form textarea,
 body main form .wrapper select {
   appearance: none;
   width: 100%;
-  background-color: white;
+  background-color: #FFFFFF;
   padding: 5px 8px;
-  border: solid clamp(1px, 0.2vw, 2px) white;
+  border: solid clamp(1px, 0.2vw, 2px) #FFFFFF;
   border-radius: 0;
   box-sizing: border-box;
   color: #333333;
@@ -124,12 +124,12 @@ body main form .unavailable ~ svg path {
 }
 body main form .wrong,
 body main form .wrapper .wrong {
-  border: solid clamp(1px, 0.2vw, 2px) #B34747;
-  color: #B34747;
+  border: solid clamp(1px, 0.2vw, 2px) #980000;
+  color: #980000;
 }
 body main form .wrong::placeholder,
 body main form .wrapper .wrong::placeholder {
-  color: #B34747;
+  color: #980000;
 }
 body main form .wrong:focus::placeholder,
 body main form .wrapper .wrong:focus::placeholder {
@@ -139,12 +139,12 @@ body main form button {
   appearance: none;
   width: min-content;
   align-self: center;
-  background-color: #A3BFC5;
-  border: solid 2px #333333;
+  background-color: #FFFFFF;
+  border: solid 2px #000000;
   border-radius: 7px;
   padding: 5px 15px 5px 15px;
   margin: 10px 0;
-  color: #333333;
+  color: #000000;
   font-family: "KyivType", serif;
   font-size: clamp(20px, 3vw, 30px);
   cursor: pointer;

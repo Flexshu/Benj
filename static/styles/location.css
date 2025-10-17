@@ -42,7 +42,7 @@ body main .container .second .marginedSecond p,
 body main .container .second .marginedSecond #metro p {
   font-family: "KyivTypeBold", serif;
   font-size: 1em;
-  color: #2C525A;
+  color: #000000;
   text-align: center;
 }
 body main .container .second .marginedSecond p svg,
@@ -53,11 +53,12 @@ body main .container .second .marginedSecond #metro p svg {
   transform: translateY(-10%);
   overflow: visible;
 }
+body main .container .second .marginedSecond p svg path,
+body main .container .second .marginedSecond #metro p svg path {
+  fill: #000000;
+}
 body main .container .second .marginedSecond #adress {
   font-family: "KyivType", serif;
-}
-body main .container .second .marginedSecond #adress svg path {
-  fill: #2C525A;
 }
 body main .container .second .marginedSecond #metro {
   width: 100%;
@@ -68,18 +69,21 @@ body main .container .second .marginedSecond #metro {
 body main .container .second .marginedSecond #metro #metroSecond {
   font-family: "KyivType", serif;
   font-size: 0.8em;
-  color: #4A7A82;
+  color: #333333;
   margin-top: 10px;
 }
+body main .container .second .marginedSecond #metro #metroSecond svg path {
+  fill: #333333;
+}
 body main .container .second .marginedSecond button {
-  background-color: #A3BFC5;
-  border: solid 3px #333333;
+  background-color: #e30566;
+  border: solid 3px #000000;
   border-radius: 10px;
   cursor: pointer;
   transition: box-shadow 0.25s ease;
   font-family: "KyivType", serif;
   font-size: 0.8em;
-  color: #333333;
+  color: #FFFFFF;
   padding: 10px 15px;
   user-select: none;
   -webkit-user-select: none;
@@ -93,7 +97,7 @@ body main .container .gradient {
   height: 100%;
   aspect-ratio: 1 / 2;
   transform: translateX(calc(100% + 1px));
-  background: linear-gradient(to left, #CCCCCC, transparent);
+  background: linear-gradient(to left, #FFFFFF, transparent);
 }
 body #windowContainer {
   position: fixed;
@@ -110,8 +114,8 @@ body #windowContainer {
 body #windowContainer #popUpWindow {
   position: relative;
   z-index: 31;
-  background-color: #CCCCCC;
-  border: solid clamp(3px, 0.5vw, 5px) #333333;
+  background-color: #FFFFFF;
+  border: solid clamp(3px, 0.5vw, 5px) #000000;
   border-radius: clamp(17px, 3.2vw, 25px);
   padding: min(25px, 3vw);
   padding-top: 15px;
@@ -122,7 +126,7 @@ body #windowContainer #popUpWindow {
   gap: 15px;
 }
 body #windowContainer #popUpWindow #name {
-  color: #333333;
+  color: #000000;
   font-family: "Kurale", serif;
   font-size: clamp(20px, 3.75vw, 4.75vh);
   text-align: center;
@@ -133,8 +137,11 @@ body #windowContainer #popUpWindow #name #locationIcon {
   width: auto;
   transform: translateY(-10%);
 }
+body #windowContainer #popUpWindow #name #locationIcon path {
+  fill: #000000;
+}
 body #windowContainer #popUpWindow iframe {
-  border: solid clamp(2px, 0.3vw, 3px) #333333;
+  border: solid clamp(2px, 0.3vw, 3px) #000000;
   border-radius: 15px;
   aspect-ratio: 1 / 1;
   width: clamp(min(315px, 80vw), 80vw, 70vh);
@@ -147,6 +154,9 @@ body #windowContainer #popUpWindow #crossIcon {
   height: clamp(20px, 4vmin, 3.5vh);
   cursor: pointer;
   transition: filter 0.15s ease;
+}
+body #windowContainer #popUpWindow #crossIcon path {
+  fill: #000000;
 }
 body #windowContainer #popUpWindow #crossIcon:hover {
   filter: drop-shadow(0 0 1px #33333388);

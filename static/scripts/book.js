@@ -214,10 +214,15 @@ dateInput.addEventListener("change", defineTimeInput);
 //submitting
 function checkInputs() {
     let checker = false;
+    let scrolled = false;
     for (let input of inputArray) {
         if (input.value === "") {
             input.classList.add("wrong");
             checker = true;
+            if (!scrolled) {
+                input.scrollIntoView({ behavior: "smooth", block: "center" });
+                scrolled = true;
+            }
         }
     }
     for (let char of phoneNumberInput.value) {
