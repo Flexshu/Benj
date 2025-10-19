@@ -73,7 +73,7 @@ body main .wrapper .container img:hover {
   box-shadow: 0 0 3px 2px #33333388;
 }
 body main .wrapper .container h1 {
-  color: #333333;
+  color: #000000;
   text-align: center;
   font-family: "KyivTypeBold", serif;
   font-size: 0.6em;

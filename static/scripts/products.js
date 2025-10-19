@@ -13,6 +13,7 @@ products.push(new Product("Tigi Small Talk", "Tigi", "450 грн", "Зміцню
 products.push(new Product("Hillary Perfect Hair Serenoa", "Hillary", "2500 грн", "Hillary Perfect Hair Serenoa — комплекс для боротьби з випадінням волосся: спортивнює фолікули, знижує DHT, насичує ніацинамідом таproteїнами пшениці, стимулює об’єм і ріст, живить та робить волосся густішим і блискучим.", "static/img/Photos/product2.png"));
 products.push(new Product("Чоловічий шампунь Alfaparf Milano", "Alfaparf Milano", "750 грн", "Чоловічий шампунь Alfaparf Milano м’яко очищує волосся і шкіру голови, зміцнює, додає об’єм і свіжість. Підходить для щоденного використання, живить коріння, бореться з жирністю, не містить сульфатів.", "static/img/Photos/product3.png"));
 products.push(new Product("Victoria’s Secret Midnight Bloom", "Victoria’s Secret", "400 грн", "Ніжний, солодко-квітковий аромат із вершково-деревним шлейфом. Пахне нічною квіткою, ягодами та теплою амброю. Легкий, мрійливий і чуттєвий — як нічна прогулянка під місяцем.", "static/img/Photos/product4.png"));
+products.push(new Product("Romolo Barba Italiana", "Romolo", "940 грн", "Олія з натуральними компонентами: виноградними кісточками, авокадо, арганою, макадамією, бавовною та маслом ладану — зволожує, живить і надає бороді здорового блиску. Вона одночасно захищає, пом’якшує і підкреслює форму бороди та вусів.", "static/img/Photos/product5.png"));
 
 let windowContainer = document.getElementById("windowContainer");
 let image = document.getElementById("image");
