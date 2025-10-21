@@ -104,25 +104,25 @@ body main .wrapper {
   margin: 20px 0;
   display: grid;
   justify-items: center;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(max(200px, 30vw), 1fr));
+  gap: 2vh 1vw;
+  grid-template-columns: repeat(auto-fit, minmax(max(155px, 30vw), 1fr));
 }
 body main .wrapper .card {
   background-color: #F5EEE6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 0.5vh;
   padding: clamp(10px, 2.5vw, 15px);
   border-radius: clamp(13px, 3vw, 20px);
   border: solid clamp(2px, 0.5vw, 4px) #000000;
   transition: box-shadow 0.25s ease;
   font-size: clamp(15px, 1.5vw, 30px);
-  width: calc(max(200px, 30vw) * 0.9);
+  width: calc(max(155px, 30vw) * 0.825);
 }
 body main .wrapper .card img {
   width: 100%;
-  height: calc(max(200px, 30vw) * 0.9);
+  height: calc(max(155px, 30vw) * 0.825);
   border-radius: 15px;
   border: solid clamp(1.5px, 0.35vw, 3px) #000000;
 }
