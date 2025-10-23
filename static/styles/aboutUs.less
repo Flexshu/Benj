@@ -67,6 +67,9 @@ body{
                 transform: translateX(calc(-100% - 1px));
                 background: linear-gradient(to right, @white, transparent);
             }
+            #mobileGradient{
+                display: none;
+            }
         }
         .heading{
                 width: 94vw;
@@ -168,6 +171,15 @@ body{
                 }
                 .gradient{
                     display: none;
+                }
+                #mobileGradient{
+                    display: block;
+                    position: absolute;
+                    z-index: 5;
+                    height: 50vw;
+                    width: 100vw;
+                    background: linear-gradient(to top, @white, transparent);
+                    transform: translateY(calc(+100% + 1px));
                 }
             }
         }

@@ -86,8 +86,11 @@ body{
                 z-index: 5;
                 height: 100%;
                 aspect-ratio: 1 / 2;
-                transform: translateX(calc(100% + 1px));
                 background: linear-gradient(to left, @white, transparent);
+                transform: translateX(calc(100% + 1px));
+            }
+            #mobileGradient{
+                display: none;
             }
         }
     }
@@ -193,9 +196,18 @@ body{
                         }
                     }
                 }
-            }
-            .gradient{
-                display: none;
+                .gradient{
+                    display: none;
+                }
+                #mobileGradient{
+                    display: block;
+                    position: absolute;
+                    z-index: 5;
+                    height: 50vw;
+                    width: 100vw;
+                    background: linear-gradient(to top, @white, transparent);
+                    transform: translateY(calc(+100% + 1px));
+                }
             }
         }
     }

@@ -79,6 +79,9 @@ body main .container .gradient {
   transform: translateX(calc(-100% - 1px));
   background: linear-gradient(to right, #FFFFFF, transparent);
 }
+body main .container #mobileGradient {
+  display: none;
+}
 body main .heading {
   width: 94vw;
   display: flex;
@@ -175,5 +178,14 @@ body main .wrapper .card:hover {
   }
   body main .container .gradient {
     display: none;
+  }
+  body main .container #mobileGradient {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 50vw;
+    width: 100vw;
+    background: linear-gradient(to top, #FFFFFF, transparent);
+    transform: translateY(calc(100% + 1px));
   }
 }

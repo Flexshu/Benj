@@ -14,6 +14,9 @@ body{
             height: 100%;
             aspect-ratio: 1 / 2;
         }
+        .mobileGradient{
+            display: none;
+        }
         #one{
             flex-direction: row-reverse;
             .first{
@@ -75,8 +78,8 @@ body{
                 }
             }
             #oneGradient{
-                transform: translateX(calc(-100% - 1px));
                 background: linear-gradient(to right, @white, transparent);
+                transform: translateX(calc(-100% - 1px));
             }
         }
         #two{
@@ -133,8 +136,8 @@ body{
                 }
             }
             #twoGradient{
-                transform: translateX(calc(100% + 1px));
                 background: linear-gradient(to left, @white, transparent);
+                transform: translateX(calc(100% + 1px));
             }
         }
         #three{
@@ -214,6 +217,15 @@ body{
             .gradient{
                 display: none;
             }
+            .mobileGradient{
+                display: block;
+                position: absolute;
+                z-index: 5;
+                height: 50vw;
+                width: 100vw;
+                background: linear-gradient(to top, @white, transparent);
+                transform: translateY(calc(+100% + 1px));
+            }
             #one{
                 flex-direction: column;
                 .first{
@@ -251,7 +263,7 @@ body{
                     display: flex;
                     justify-content: center;
                     img{
-                        width: 95%;
+                        width: 100%;
                     }
                 }
                 .second{

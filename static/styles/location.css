@@ -96,8 +96,11 @@ body main .container .gradient {
   z-index: 5;
   height: 100%;
   aspect-ratio: 1 / 2;
-  transform: translateX(calc(100% + 1px));
   background: linear-gradient(to left, #FFFFFF, transparent);
+  transform: translateX(calc(100% + 1px));
+}
+body main .container #mobileGradient {
+  display: none;
 }
 body #windowContainer {
   position: fixed;
@@ -199,8 +202,17 @@ body #windowContainer #mainShade {
   body main .container .second .marginedSecond #metro p {
     width: 80%;
   }
-  body main .gradient {
+  body main .container .gradient {
     display: none;
+  }
+  body main .container #mobileGradient {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 50vw;
+    width: 100vw;
+    background: linear-gradient(to top, #FFFFFF, transparent);
+    transform: translateY(calc(100% + 1px));
   }
 }
 @media (max-height: 452px) {

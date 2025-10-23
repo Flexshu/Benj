@@ -22,6 +22,9 @@ body main .gradient {
   height: 100%;
   aspect-ratio: 1 / 2;
 }
+body main .mobileGradient {
+  display: none;
+}
 body main #one {
   flex-direction: row-reverse;
 }
@@ -84,8 +87,8 @@ body main #one .second p {
   width: 75%;
 }
 body main #one #oneGradient {
-  transform: translateX(calc(-100% - 1px));
   background: linear-gradient(to right, #FFFFFF, transparent);
+  transform: translateX(calc(-100% - 1px));
 }
 body main #two .first {
   height: 100%;
@@ -138,8 +141,8 @@ body main #two .second .buttonsContainer a .button span {
   font-size: max(2vw, 20px);
 }
 body main #two #twoGradient {
-  transform: translateX(calc(100% + 1px));
   background: linear-gradient(to left, #FFFFFF, transparent);
+  transform: translateX(calc(100% + 1px));
 }
 body main #three {
   flex-direction: row-reverse;
@@ -213,6 +216,15 @@ body main #three .second #scissors {
   body main .gradient {
     display: none;
   }
+  body main .mobileGradient {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    height: 50vw;
+    width: 100vw;
+    background: linear-gradient(to top, #FFFFFF, transparent);
+    transform: translateY(calc(100% + 1px));
+  }
   body main #one {
     flex-direction: column;
   }
@@ -252,7 +264,7 @@ body main #three .second #scissors {
     justify-content: center;
   }
   body main #two .first img {
-    width: 95%;
+    width: 100%;
   }
   body main #two .second {
     width: 100vw;
